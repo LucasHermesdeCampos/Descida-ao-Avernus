@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Descida ao Avernus | 6DNós</title>
+  <meta name="description" content="Página oficial da campanha 'Descida ao Avernus' do grupo 6DNós, utilizando D&D 2024 com regras caseiras infernais.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --hellfire-dark: #1a0a05;
+      --hellfire-mid: #3a150a;
+      --hellfire-light: #5a2a15;
+      --hellfire-border: #9a3b1a;
+      --gold-primary: #c5a447;
+      --gold-accent: #e6c35c;
+      --gold-glow: rgba(197, 164, 71, 0.3);
+      --text-light: #f2e8d5;
+      --text-muted: #d0bc9a;
+      --crimson: #8b0000;
+      --shadow: #080202;
+      --infernal-red: #c92a2a;
+      --ash-gray: #5c5c5c;
+    }
+
+    body {
+      font-family: 'Crimson Text', serif;
+      color: var(--text-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background: 
+        url("descida-ao-avernus-bg.png") center/cover no-repeat,
+        var(--hellfire-dark);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    /* Infernal header */
+    header {
+      background: var(--hellfire-light);
+      border-bottom: 3px solid var(--gold-primary);
+      padding: 12px 0;
+      text-align: center;
+      position: relative;
+      margin-bottom: 24px;
+      box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.7),
+        0 0 12px var(--gold-glow);
+      border-top: 1px solid rgba(199, 172, 84, 0.4);
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--gold-accent), var(--infernal-red), var(--gold-accent), transparent);
+      box-shadow: 0 0 6px var(--gold-glow);
+    }
+
+    .header-art {
+      max-width: 30%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border: none;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .header-art:hover {
+        transform: translateX(5px) translateY(-3px) scale(1.02);
+      }
+    }
+
+    .campaign-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin: 10px 0;
+      font-family: 'Cinzel', serif;
+      text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .campaign-title::before,
+    .campaign-title::after {
+      content: "🔥";
+      margin: 0 8px;
+      color: var(--gold-accent);
+      font-size: 0.9em;
+    }
+
+    .mission-title {
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-shadow: 
+        0 0 10px var(--gold-glow),
+        0 0 20px rgba(197, 164, 71, 0.2),
+        2px 2px 4px rgba(0, 0, 0, 0.8);
+      background: linear-gradient(to right, #f2e8d5, var(--gold-accent), #f76750);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-family: 'Cinzel', serif;
+      position: relative;
+    }
+
+    .mission-title::before,
+    .mission-title::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 16px;
+      height: 2px;
+      background: var(--gold-primary);
+      transform: translateY(-50%);
+    }
+
+    .mission-title::before { left: -16px; }
+    .mission-title::after { right: -16px; }
+
+    /* Mission image */
+    .mission-image {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 24px;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, var(--hellfire-dark), var(--hellfire-mid));
+      border: 3px solid var(--hellfire-border);
+      box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.7),
+        inset 0 0 0 1px rgba(154, 59, 26, 0.2),
+        0 0 25px var(--gold-glow);
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mission-image::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 25% 20%, rgba(201, 42, 42, 0.15) 0%, transparent 30%),
+        radial-gradient(circle at 75% 80%, rgba(201, 42, 42, 0.1) 0%, transparent 35%);
+      pointer-events: none;
+    }
+
+    .mission-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 0.95;
+    }
+
+    .mission-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 65%, rgba(26, 10, 5, 0.8) 100%);
+      pointer-events: none;
+    }
+
+    .photo-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(26, 10, 5, 0.85);
+      border: 1px solid var(--hellfire-border);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .mission-synopsis {
+      max-width: 900px;
+      margin: 0 auto 24px;
+      background: var(--hellfire-mid);
+      border: 2px solid var(--hellfire-border);
+      border-radius: 0;
+      padding: 28px;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      font-family: 'Crimson Text', serif;
+      position: relative;
+      border-left: 4px solid var(--gold-primary);
+    }
+
+    .mission-synopsis::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--gold-primary);
+    }
+
+    .mission-synopsis h2 {
+      color: var(--gold-accent);
+      margin-bottom: 18px;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+    }
+
+    /* Characters */
+    .characters-section {
+      margin: 40px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      color: var(--gold-accent);
+      letter-spacing: 2px;
+      position: relative;
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 2px;
+      background: var(--gold-primary);
+    }
+
+    .characters-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      max-width: 1300px;
+    }
+
+    .id-badge {
+      width: 200px;
+      flex: 0 0 auto;
+      background: var(--hellfire-dark);
+      border: 2px solid var(--hellfire-border);
+      border-radius: 0;
+      overflow: hidden;
+      box-shadow: 
+        0 6px 16px rgba(0, 0, 0, 0.5),
+        0 0 18px var(--gold-glow);
+      transition: all 0.3s ease;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .id-badge:hover {
+        transform: translateY(-6px);
+        box-shadow: 
+          0 10px 24px rgba(0, 0, 0, 0.6),
+          0 0 25px var(--gold-glow),
+          0 0 30px rgba(139, 0, 0, 0.2);
+        border-color: var(--gold-primary);
+      }
+    }
+
+    .badge-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, #250e07, #3d190c);
+      border-bottom: 2px solid var(--gold-primary);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .badge-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(1) contrast(2) brightness(0);
+      z-index: 1;
+    }
+
+    .badge-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26, 10, 5, 0.9), transparent 55%);
+      pointer-events: none;
+    }
+
+    .badge-photo-overlay {
+      position: relative;
+      z-index: 2;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 8px 10px;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+    }
+
+    .badge-content {
+      padding: 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .badge-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(154, 59, 26, 0.4);
+    }
+
+    .badge-id {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+    }
+
+    .badge-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(197, 164, 71, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-accent);
+      font-size: 0.9rem;
+      border: 1px solid var(--gold-primary);
+    }
+
+    .badge-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 12px;
+      line-height: 1.3;
+      font-family: 'Cinzel', serif;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    }
+
+    .badge-field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+    }
+
+    .badge-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 3px;
+      font-weight: 600;
+      font-family: 'Cinzel', serif;
+    }
+
+    .badge-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      font-family: 'Crimson Text', serif;
+    }
+
+    .badge-antecedent .badge-value { color: var(--gold-accent); }
+    .badge-species .badge-value { color: var(--gold-accent); }
+    .badge-class .badge-value { color: #c9b99a; }
+
+    .badge-footer {
+      background: rgba(0, 0, 0, 0.25);
+      padding: 8px 12px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border-top: 1px solid var(--hellfire-border);
+      margin-top: auto;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.5px;
+    }
+
+    /* Creation panel */
+    .creation-section {
+      background: var(--hellfire-mid);
+      border: 2px solid var(--hellfire-border);
+      border-radius: 0;
+      padding: 30px;
+      margin: 35px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .creation-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gold-primary);
+    }
+
+    .creation-section h2 {
+      color: var(--gold-accent);
+      margin-bottom: 24px;
+      text-align: center;
+      font-size: 1.6rem;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+    }
+
+    .creation-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+    }
+
+    .creation-item {
+      background: var(--hellfire-dark);
+      padding: 20px;
+      border-radius: 0;
+      min-width: 240px;
+      text-align: center;
+      border: 2px solid var(--hellfire-border);
+      position: relative;
+    }
+
+    .creation-item::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold-primary);
+      box-shadow: 0 0 6px var(--gold-glow);
+      border: 1px solid var(--gold-accent);
+    }
+
+    .creation-label {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .creation-value {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: white;
+      font-family: 'Cinzel', serif;
+    }
+
+    .bonus-link {
+      color: var(--gold-accent);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px dashed var(--gold-primary);
+      transition: all 0.3s ease;
+    }
+
+    .bonus-link:hover {
+      color: white;
+      border-bottom: 1px solid white;
+      text-shadow: 0 0 8px var(--gold-glow);
+    }
+
+    /* Rules */
+    .rules-section {
+      display: flex;
+      width: 100%;
+      gap: 24px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .rules-column {
+      flex: 1;
+      min-width: 300px;
+      background: var(--hellfire-mid);
+      border: 2px solid var(--hellfire-border);
+      border-radius: 0;
+      padding: 26px;
+      position: relative;
+    }
+
+    .rules-column::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: var(--gold-primary);
+      box-shadow: 0 0 8px var(--gold-glow);
+    }
+
+    .rules-column h3 {
+      color: var(--gold-accent);
+      margin-bottom: 22px;
+      font-size: 1.4rem;
+      padding-left: 16px;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+    }
+
+    .rule-item {
+      position: relative;
+      padding: 14px 18px 14px 36px;
+      background: var(--hellfire-dark);
+      margin-bottom: 14px;
+      border-radius: 0;
+      cursor: default;
+      border-left: 2px solid transparent;
+      transition: all 0.25s ease;
+      font-family: 'Crimson Text', serif;
+    }
+
+    .rule-item::before {
+      content: "•";
+      position: absolute;
+      left: 16px;
+      color: var(--gold-accent);
+      font-size: 1.3rem;
+      line-height: 1;
+      text-shadow: 0 0 4px var(--gold-glow);
+    }
+
+    .rule-item:hover {
+      background: #381208;
+      border-left-color: var(--gold-primary);
+      transform: translateX(4px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .rule-item::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      background: var(--hellfire-dark);
+      color: var(--text-light);
+      padding: 14px 18px;
+      border-radius: 0;
+      font-size: 0.92rem;
+      width: 300px;
+      max-width: 90vw;
+      z-index: 10;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, transform 0.3s;
+      box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.6),
+        0 0 12px var(--gold-glow);
+      border: 2px solid var(--hellfire-border);
+      line-height: 1.5;
+      font-family: 'Crimson Text', serif;
+      border-left: 3px solid var(--gold-primary);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .rule-item:hover::after {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+
+    /* Blood splatters */
+    .blood-splatter {
+      position: fixed;
+      opacity: 0.05;
+      z-index: -1;
+      pointer-events: none;
+      color: var(--infernal-red);
+    }
+
+    .blood-splatter-1 {
+      top: 8%;
+      left: 6%;
+      font-size: 100px;
+      transform: rotate(15deg);
+    }
+
+    .blood-splatter-2 {
+      bottom: 12%;
+      right: 6%;
+      font-size: 80px;
+      transform: rotate(-25deg);
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--hellfire-dark);
+      color: var(--text-muted);
+      font-family: 'Crimson Text', serif;
+      border-top: 2px solid var(--gold-primary);
+      margin-top: 50px;
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.1);
+      padding: 32px 0 18px;
+      font-size: 1.05rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .footer-main {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .footer-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      color: var(--gold-accent);
+      font-size: 1.15rem;
+      margin-bottom: 3px;
+    }
+
+    .footer-social-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      font-size: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footer-social-tag {
+      background: var(--hellfire-mid);
+      color: var(--gold-accent);
+      padding: 1px 8px;
+      border-radius: 7px;
+      font-family: 'Cinzel', serif;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-link {
+      color: var(--gold-accent);
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+
+    .footer-link:hover {
+      color: #fff7c7;
+    }
+
+    .footer-meta {
+      color: var(--text-muted);
+      font-size: 0.93rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* Responsive */
+    @media (max-width: 610px) {
+      .footer-meta { flex-direction: column; align-items: flex-start; }
+      .footer-social-list { flex-direction: column; gap: 4px; }
+    }
+
+    @media (max-width: 480px) {
+      .mission-title { font-size: 1.8rem; }
+      .campaign-title { font-size: 1.2rem; }
+      .section-title { font-size: 1.5rem; }
+      .id-badge { width: 100%; max-width: 280px; }
+    }
+
+    /* Acessibilidade */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="blood-splatter blood-splatter-1">•</div>
+  <div class="blood-splatter blood-splatter-2">•</div>
+
+  <div class="container">
+    <header>
+      <a href="https://6dnos.fandom.com/pt-br/wiki/6DN%C3%B3s_Wiki" target="_blank" rel="noopener">
+        <img src="descida-ao-avernus-icon.png" alt="6DNós Wiki — Clique para acessar" class="header-art" loading="lazy" style="width: 10%;">
+      </a>
+      <div class="campaign-title">6DNós: Descida ao Avernus</div>
+      <h1 class="mission-title">Campanha Principal</h1>
+    </header>
+
+    <main>
+      <div class="mission-image">
+        <div class="photo-badge">
+          <i class="fas fa-fire" aria-hidden="true"></i> Baldur's Gate
+        </div>
+        <img 
+          src="descida-ao-avernus-img.png" 
+          alt="Vista de Baldur’s Gate com o céu em chamas e o Avernus ao fundo"
+          loading="lazy"
+        >
+      </div>
+
+      <section class="mission-synopsis">
+        <h2><i class="fas fa-scroll" aria-hidden="true"></i> Sinopse</h2>
+        <p>
+          Bem-vindo a Baldur's Gate — uma cidade de ambição e corrupção situada na encruzilhada da Costa da Espada. Você acabou de começar sua carreira de aventureiro, mas já se encontra envolvido em uma trama que se estende desde as sombras de Baldur’s Gate até a linha de frente da Guerra Sangrenta que abrange os planos! Você tem o que é preciso para lidar com as máquinas de guerra infernais e contratos nefastos contra a arquidiabo Zariel e suas hordas diabólicas? E você poderá esperar encontrar o caminho para casa em segurança quando for confrontado com os males infinitos dos Nove Infernos?
+        </p>
+      </section>
+
+      <section class="characters-section" aria-labelledby="characters-title">
+        <div class="section-header">
+          <h2 id="characters-title" class="section-title">Aventureiros</h2>
+        </div>
+
+        <div class="characters-grid">
+          <!-- GINHO -->
+          <a href="sheet_ginho.html" class="id-badge" aria-label="Ficha de Ginho, Druida Nível 1">
+            <div class="badge-photo">
+              <img src="chara-ginho.png" alt="Retrato de Ginho, humano eremita" loading="lazy">
+              <div class="badge-photo-overlay"></div>
+            </div>
+            <div class="badge-content">
+              <div class="badge-header">
+                <div class="badge-id">Raul</div>
+                <div class="badge-icon" aria-hidden="true"><i class="fas fa-leaf"></i></div>
+              </div>
+              <div class="badge-name">Ginho</div>
+              <div class="badge-field badge-antecedent">
+                <div class="badge-label">Antecedente</div>
+                <div class="badge-value">Eremita</div>
+              </div>
+              <div class="badge-field badge-species">
+                <div class="badge-label">Espécie</div>
+                <div class="badge-value">Humano</div>
+              </div>
+              <div class="badge-field badge-class">
+                <div class="badge-label">Classe</div>
+                <div class="badge-value">Druida</div>
+              </div>
+              <div class="badge-footer">
+                <i class="fas fa-level-up-alt" aria-hidden="true"></i> Nível 1
+              </div>
+            </div>
+          </a>
+
+          <!-- TICO -->
+          <a href="sheet_tico.html" class="id-badge" aria-label="Ficha de Tico, Mago Nível 1">
+            <div class="badge-photo">
+              <img src="chara-tico.png" alt="Retrato de Tico, fada sábia" loading="lazy">
+              <div class="badge-photo-overlay"></div>
+            </div>
+            <div class="badge-content">
+              <div class="badge-header">
+                <div class="badge-id">Enzo</div>
+                <div class="badge-icon" aria-hidden="true"><i class="fas fa-book"></i></div>
+              </div>
+              <div class="badge-name">Tico</div>
+              <div class="badge-field badge-antecedent">
+                <div class="badge-label">Antecedente</div>
+                <div class="badge-value">Sábio</div>
+              </div>
+              <div class="badge-field badge-species">
+                <div class="badge-label">Espécie</div>
+                <div class="badge-value">Fada</div>
+              </div>
+              <div class="badge-field badge-class">
+                <div class="badge-label">Classe</div>
+                <div class="badge-value">Mago</div>
+              </div>
+              <div class="badge-footer">
+                <i class="fas fa-level-up-alt" aria-hidden="true"></i> Nível 1
+              </div>
+            </div>
+          </a>
+
+          <!-- SHURA -->
+          <a href="sheet_shura.html" class="id-badge" aria-label="Ficha de Shura, Patrulheiro Nível 1">
+            <div class="badge-photo">
+              <img src="chara-shura.png" alt="Retrato de Shura, humano sem-rosto" loading="lazy">
+              <div class="badge-photo-overlay"></div>
+            </div>
+            <div class="badge-content">
+              <div class="badge-header">
+                <div class="badge-id">Bruna</div>
+                <div class="badge-icon" aria-hidden="true"><i class="fas fa-crosshairs"></i></div>
+              </div>
+              <div class="badge-name">Shura</div>
+              <div class="badge-field badge-antecedent">
+                <div class="badge-label">Antecedente</div>
+                <div class="badge-value">Sem-Rosto</div>
+              </div>
+              <div class="badge-field badge-species">
+                <div class="badge-label">Espécie</div>
+                <div class="badge-value">Humano</div>
+              </div>
+              <div class="badge-field badge-class">
+                <div class="badge-label">Classe</div>
+                <div class="badge-value">Patrulheiro</div>
+              </div>
+              <div class="badge-footer">
+                <i class="fas fa-level-up-alt" aria-hidden="true"></i> Nível 1
+              </div>
+            </div>
+          </a>
+
+          <!-- TECO -->
+          <a href="sheet_teco.html" class="id-badge" aria-label="Ficha de Teco, Bruxo Nível 1">
+            <div class="badge-photo">
+              <img src="chara-teco.png" alt="Retrato de Teco, fada bruxo" loading="lazy">
+            </div>
+            <div class="badge-content">
+              <div class="badge-header">
+                <div class="badge-id">Henry</div>
+                <div class="badge-icon" aria-hidden="true"><i class="fas fa-moon"></i></div>
+              </div>
+              <div class="badge-name">Teco</div>
+              <div class="badge-field badge-antecedent">
+                <div class="badge-label">Antecedente</div>
+                <div class="badge-value">Eremita</div>
+              </div>
+              <div class="badge-field badge-species">
+                <div class="badge-label">Espécie</div>
+                <div class="badge-value">Fada</div>
+              </div>
+              <div class="badge-field badge-class">
+                <div class="badge-label">Classe</div>
+                <div class="badge-value">Bruxo</div>
+              </div>
+              <div class="badge-footer">
+                <i class="fas fa-level-up-alt" aria-hidden="true"></i> Nível 1
+              </div>
+            </div>
+          </a>
+
+          <!-- ??? -->
+          <a href="sheet_duda.html" class="id-badge" aria-label="Personagem misterioso — ficha indisponível">
+            <div class="badge-photo">
+              <div class="badge-photo-overlay">
+                <i class="fas fa-user-secret" aria-hidden="true"></i> Mistério
+              </div>
+            </div>
+            <div class="badge-content">
+              <div class="badge-header">
+                <div class="badge-id">Duda</div>
+                <div class="badge-icon" aria-hidden="true"><i class="fas fa-question"></i></div>
+              </div>
+              <div class="badge-name">???. ??? ???</div>
+              <div class="badge-field badge-antecedent">
+                <div class="badge-label">Antecedente</div>
+                <div class="badge-value">Recompensado</div>
+              </div>
+              <div class="badge-field badge-species">
+                <div class="badge-label">Espécie</div>
+                <div class="badge-value">Forjado Bélico</div>
+              </div>
+              <div class="badge-field badge-class">
+                <div class="badge-label">Classe</div>
+                <div class="badge-value">Bárbaro</div>
+              </div>
+              <div class="badge-footer">
+                <i class="fas fa-level-up-alt" aria-hidden="true"></i> Nível 1
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="creation-section" aria-labelledby="creation-title">
+        <h2 id="creation-title"><i class="fas fa-id-card" aria-hidden="true"></i> Criação de Personagem</h2>
+        <div class="creation-grid">
+          <div class="creation-item">
+            <div class="creation-label">Sistema</div>
+            <div class="creation-value">D&D 2024</div>
+          </div>
+          <div class="creation-item">
+            <div class="creation-label">Compatibilidade</div>
+            <div class="creation-value">D&D 2014</div>
+          </div>
+          <div class="creation-item">
+            <div class="creation-label">Conteúdo</div>
+            <div class="creation-value"><a href="#" class="bonus-link">UA 2025</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="rules-section" aria-labelledby="rules-title">
+        <div class="rules-column">
+          <h3 id="rules-title"><i class="fas fa-fire" aria-hidden="true"></i> Regras da Casa</h3>
+          <div class="rule-item" data-tooltip="Um acerto crítico (20 natural) causa uma cicatriz permanente e pode ser confirmado com um segundo 20 natural, resultando em mutilação, dano triplicado e exaustão. Um terceiro 20 natural na rolagem de dano finaliza a confirmação, matando o alvo instantaneamente.">
+            Crítico Confirmado
+          </div>
+          <div class="rule-item" data-tooltip="Quando você mata uma criatura, o dano excedente é transferido automaticamente para uma criatura adjacente, contanto que o acerto de ataque original fosse alto o suficiente para atingir o CA dela. Apenas o dano é transferido, não quaisquer outros efeitos especiais do ataque.">
+            Dano Excedente
+          </div>
+          <div class="rule-item" data-tooltip="Quando um personagem morrendo se levanta devido a ter sucesso em suas Salvaguardas de Morte, ele imediatamente adquire um nível de exaustão. Essa exaustão não é aplicada se o personagem for levantado por intervenção externa, como magia ou um teste de Medicina.">
+            Exaustão da Morte
+          </div>
+          <div class="rule-item" data-tooltip="Cada nível de exaustão impõe uma penalidade cumulativa de -1 em todos os Testes de D20 (ataque, resistência, habilidade) e uma redução de 5 pés no deslocamento a cada dois níveis. Acumular 11 níveis de exaustão leva à morte instantânea do personagem.">
+            Exaustão do One D&D
+          </div>
+          <div class="rule-item" data-tooltip="Uma falha crítica (1 natural) em um teste de ataque fará com que o ataque atinja um aliado adjacente, caso este esteja no ângulo de ataque. O dano causado ao aliado é sempre o dano mínimo possível para a rolagem, incluindo bônus e dados de dano extras (como Ataque Furtivo).">
+            Falha Crítica
+          </div>
+          <div class="rule-item" data-tooltip="A iniciativa deve ser rolada novamente no início de cada novo turno de combate, para tornar as ações mais imprevisíveis, a menos que o VTT falhe ou o Mestre opte por agilizar o jogo.">
+            Iniciativa Dinâmica
+          </div>
+          <div class="rule-item" data-tooltip="A regra reintroduz Pontos de Vida Negativos, onde o excesso de dano abaixo de 0 PV deve ser curado para que o personagem se levante, exigindo atingir 1 PV. Se o dano negativo acumulado for igual ou superior aos Pontos de Vida Máximos do personagem, ele morre instantaneamente, sem testes de morte.">
+            Pontos de Vida Negativos
+          </div>
+          <div class="rule-item" data-tooltip="Você pode puxar ou empurrar um aliado adjacente durante seu movimento, gastando 5 pés de deslocamento para o movimento conjunto (como terreno difícil), mas isso ainda provoca Ataques de Oportunidade e o aliado pode resistir com um teste de Atletismo com Vantagem.">
+            Puxar ou Empurrar Aliados
+          </div>
+          <div class="rule-item" data-tooltip="Para simplificar, a necessidade de suprimentos de cada personagem será abstraída e contará como uma unidade de alimento ou água por dia, similar ao sistema de Baldur's Gate III.">
+            Suprimentos
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-main">
+        <span class="footer-title">
+          Site criado por Lucas Hermes de Campos
+        </span>
+        <ul class="footer-social-list">
+          <li>Discord: <span class="footer-social-tag">KAstaroth</span></li>
+          <li>
+            Reddit: <a href="https://www.reddit.com/user/Map_Wonderful/" target="_blank" rel="noopener" class="footer-link">/u/Map_Wonderful</a>
+          </li>
+          <li>
+            Youtube (Pessoal): <a href="https://www.youtube.com/@lucashcampos" target="_blank" rel="noopener" class="footer-link">@lucashcampos</a>
+          </li>
+          <li>
+            Canal de RPG: <a href="https://www.youtube.com/@6Dnos" target="_blank" rel="noopener" class="footer-link">@6Dnos</a>
+          </li>
+        </ul>
+        <p class="footer-cenario">
+          Cenário: <a href="https://6dnos.fandom.com/pt-br/wiki/6DN%C3%B3s_Wiki" target="_blank" rel="noopener" class="footer-link">6DNós Wiki</a>
+        </p>
+        <p class="footer-copyright">
+          Este é um conteúdo não oficial de D&D 2024, produzido por fãs para fins educacionais e de entretenimento. Todos os direitos das regras, conceitos e artes relacionados pertencem à <a href="https://dnd.wizards.com/" target="_blank" rel="noopener" class="footer-link">Wizards of the Coast</a> e ao universo de <a href="https://forgottenrealms.fandom.com/" target="_blank" rel="noopener" class="footer-link">Forgotten Realms</a>.
+        </p>
+      </div>
+      <div class="footer-meta">
+        <span class="footer-year">© 2025 — Todos os direitos reservados.</span>
+        <span class="footer-github">
+          Código fonte disponível mediante solicitação.
+        </span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

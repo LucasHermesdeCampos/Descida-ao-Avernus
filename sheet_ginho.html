@@ -1,0 +1,2009 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ficha de Personagem D&D 2024</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --hellfire-dark: #1a0a05;
+      --hellfire-mid: #3a150a;
+      --hellfire-light: #5a2a15;
+      --hellfire-border: #9a3b1a;
+      --gold-primary: #c5a447;
+      --gold-accent: #e6c35c;
+      --gold-glow: rgba(197, 164, 71, 0.3);
+      --text-light: #f2e8d5;
+      --text-muted: #d0bc9a;
+      --crimson: #8b0000;
+      --shadow: #080202;
+      --infernal-red: #c92a2a;
+      --ash-gray: #5c5c5c;
+      --paper-bg: rgba(10, 5, 2, 0.85);
+      --paper-border: #9a3b1a;
+      --paper-shadow: rgba(0, 0, 0, 0.4);
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+    }
+    body {
+      font-family: 'Crimson Text', serif;
+      color: var(--text-light);
+      line-height: 1.6;
+      background: 
+        url("descida-ao-avernus-bg.png") center/cover no-repeat,
+        var(--hellfire-dark);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 100vh;
+      padding: 0;
+      overflow-x: hidden;
+      overflow-y: scroll;
+    }
+    p {
+      text-align: justify;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+    /* Header */
+    header {
+      background: var(--hellfire-light);
+      border-bottom: 3px solid var(--gold-primary);
+      padding: 10px 0;
+      text-align: center;
+      position: relative;
+      margin-bottom: 16px;
+      box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.7),
+        0 0 12px var(--gold-glow);
+      border-top: 1px solid rgba(199, 172, 84, 0.4);
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .back-button {
+      background: var(--gold-primary);
+      color: var(--hellfire-dark);
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+    .back-button:hover {
+      background: var(--gold-accent);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px var(--gold-glow);
+    }
+    .back-button i {
+      margin-right: 6px;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--gold-accent), var(--infernal-red), var(--gold-accent), transparent);
+      box-shadow: 0 0 6px var(--gold-glow);
+    }
+    .campaign-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 6px 0;
+      font-family: 'Cinzel', serif;
+      text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+    }
+    .sheet-title {
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-shadow: 
+        0 0 10px var(--gold-glow),
+        0 0 20px rgba(197, 164, 71, 0.2),
+        2px 2px 4px rgba(0, 0, 0, 0.8);
+      background: linear-gradient(to right, #f2e8d5, var(--gold-accent), #f76750);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-family: 'Cinzel', serif;
+      position: relative;
+      text-align: center;
+      padding: 0 10px;
+    }
+    .sheet-title::before,
+    .sheet-title::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 12px;
+      height: 2px;
+      background: var(--gold-primary);
+      transform: translateY(-50%);
+    }
+    .sheet-title::before { left: -12px; }
+    .sheet-title::after { right: -12px; }
+    /* Tab Navigation */
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+      justify-content: center;
+      background: var(--hellfire-mid);
+      padding: 12px;
+      border-radius: 8px;
+      border: 2px solid var(--paper-border);
+    }
+    .tab-button {
+      background: var(--paper-bg);
+      color: var(--text-muted);
+      border: 2px solid var(--paper-border);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-family: 'Cinzel', serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      flex: 1;
+      min-width: 100px;
+      text-align: center;
+    }
+    .tab-button:hover {
+      background: var(--hellfire-light);
+      color: var(--gold-accent);
+    }
+    .tab-button.active {
+      background: var(--gold-primary);
+      color: var(--hellfire-dark);
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 8px var(--gold-glow);
+    }
+    /* Tab Content */
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    /* Sheet Container */
+    .sheet-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin: 16px 0;
+    }
+    .sheet-section {
+      background: var(--paper-bg);
+      border: 2px solid var(--paper-border);
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 4px 12px var(--paper-shadow);
+      transition: all 0.3s ease;
+    }
+    .sheet-section:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px var(--paper-shadow);
+    }
+    .section-header {
+      font-size: 1.2rem;
+      color: var(--gold-accent);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gold-primary);
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-header i {
+      font-size: 1.1rem;
+    }
+    /* Character Info */
+    .character-info {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .info-field {
+      margin-bottom: 8px;
+    }
+    .info-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 3px;
+      font-weight: 600;
+      font-family: 'Cinzel', serif;
+      text-align: justify;
+    }
+    .info-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      font-family: 'Crimson Text', serif;
+      padding: 6px;
+      border: 1px solid var(--paper-border);
+      border-radius: 4px;
+      background: rgba(20, 10, 5, 0.6);
+      color: var(--text-light);
+      text-align: justify;
+    }
+    /* Character Image */
+    .character-image {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .character-img {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      aspect-ratio: 200 / 280;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+    }
+    .character-img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 16px var(--gold-glow);
+    }
+    .image-placeholder {
+      width: 100%;
+      max-width: 200px;
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 8px;
+    }
+    /* Quick Stats */
+    .quick-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+      background: rgba(20, 10, 5, 0.6);
+      border: 2px solid var(--paper-border);
+      border-radius: 8px;
+      padding: 12px;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      font-weight: 600;
+      font-family: 'Cinzel', serif;
+    }
+    .stat-value {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--gold-accent);
+      font-family: 'Cinzel', serif;
+    }
+    /* Attributes */
+    .attributes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .attribute-box {
+      background: rgba(20, 10, 5, 0.6);
+      border: 2px solid var(--paper-border);
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 2px 6px var(--paper-shadow);
+    }
+    .attribute-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 6px;
+      font-family: 'Cinzel', serif;
+    }
+    .attribute-value {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--gold-accent);
+      margin: 6px 0;
+    }
+    .attribute-modifier {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: rgba(197, 164, 71, 0.1);
+      padding: 4px 6px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+    /* Skills and Saving Throws */
+    .skills-section {
+      margin-bottom: 16px;
+    }
+    .skills-grid, .saving-throws {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .skill-item {
+      display: flex;
+      align-items: center;
+      padding: 6px;
+      border: 1px solid var(--paper-border);
+      border-radius: 4px;
+      background: rgba(20, 10, 5, 0.6);
+    }
+    .skill-checkbox {
+      margin-right: 6px;
+      width: 14px;
+      height: 14px;
+      border: 2px solid var(--paper-border);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 14px;
+    }
+    .skill-checkbox.checked {
+      background: var(--gold-primary);
+      border-color: var(--gold-primary);
+    }
+    .skill-checkbox.checked::after {
+      content: "✓";
+      color: white;
+      font-size: 0.7rem;
+    }
+    .skill-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-light);
+      flex: 1;
+    }
+    .skill-modifier {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gold-accent);
+      min-width: 20px;
+      text-align: center;
+    }
+    /* Abilities Section */
+    .abilities-section {
+      margin-bottom: 16px;
+    }
+    .abilities-category {
+      margin-bottom: 16px;
+    }
+    .category-title {
+      font-size: 1rem;
+      color: var(--gold-accent);
+      margin-bottom: 8px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--gold-primary);
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+    }
+    .ability-box {
+      background: rgba(20, 10, 5, 0.6);
+      border: 2px solid var(--paper-border);
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .ability-box:hover {
+      border-color: var(--gold-primary);
+      background: rgba(30, 15, 8, 0.7);
+    }
+    .ability-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .ability-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold-accent);
+      font-family: 'Cinzel', serif;
+    }
+    .ability-source {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .ability-description {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 12px;
+      margin-top: 8px;
+      border-top: 1px solid var(--paper-border);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--text-light);
+      background: rgba(197, 164, 71, 0.07);
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      text-align: justify;
+    }
+    .ability-box.expanded .ability-description {
+      max-height: 500px;
+      padding: 10px 12px;
+    }
+    /* Attacks Section */
+    .attacks-section {
+      margin-bottom: 16px;
+    }
+    .attacks-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .attack-item {
+      background: rgba(20, 10, 5, 0.6);
+      border: 2px solid var(--paper-border);
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .attack-item:hover {
+      border-color: var(--gold-primary);
+      background: rgba(30, 15, 8, 0.7);
+    }
+    .attack-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: 8px 10px;
+      gap: 6px;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-light);
+    }
+    .attack-cell {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 2px 0;
+    }
+    .attack-description {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 10px;
+      background: rgba(197, 164, 71, 0.07);
+      border-top: 1px solid var(--paper-border);
+      font-size: 0.85rem;
+      line-height: 1.5;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .attack-item.expanded .attack-description {
+      max-height: 200px;
+      padding: 8px 10px;
+    }
+    /* Inventory Section */
+    .inventory-section {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      margin-bottom: 16px;
+    }
+    .inventory-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .weight-info {
+      background: rgba(20, 10, 5, 0.6);
+      border: 2px solid var(--paper-border);
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 12px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .inventory-scrollable {
+      flex: 1;
+      overflow-y: auto;
+      padding-right: 4px;
+      margin-right: -4px;
+      max-height: 300px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--gold-primary) var(--hellfire-mid);
+    }
+    .inventory-scrollable::-webkit-scrollbar {
+      width: 6px;
+    }
+    .inventory-scrollable::-webkit-scrollbar-track {
+      background: var(--hellfire-mid);
+      border-radius: 3px;
+    }
+    .inventory-scrollable::-webkit-scrollbar-thumb {
+      background: var(--gold-primary);
+      border-radius: 3px;
+    }
+    .inventory-scrollable::-webkit-scrollbar-thumb:hover {
+      background: var(--gold-accent);
+    }
+    .weight-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .weight-value {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold-accent);
+      font-family: 'Cinzel', serif;
+    }
+    .inventory-list {
+      display: grid;
+      gap: 6px;
+      padding-bottom: 6px;
+    }
+    .inventory-item {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      border: 1px solid var(--paper-border);
+      border-radius: 4px;
+      background: rgba(20, 10, 5, 0.6);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .inventory-item:hover {
+      border-color: var(--gold-primary);
+    }
+    .item-row {
+      display: flex;
+      align-items: center;
+      padding: 8px;
+    }
+    .item-name {
+      flex: 1;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-light);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .item-quantity, .item-weight {
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-align: center;
+      min-width: 25px;
+    }
+    .item-weight {
+      min-width: 35px;
+    }
+    .item-description {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 10px;
+      background: rgba(197, 164, 71, 0.07);
+      border-top: 1px solid var(--paper-border);
+      font-size: 0.85rem;
+      line-height: 1.5;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .inventory-item.expanded .item-description {
+      max-height: 200px;
+      padding: 8px 10px;
+    }
+    /* Coins */
+    .coins-section {
+      margin-top: 12px;
+    }
+    .coins-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 8px;
+    }
+    .coin-item {
+      padding: 8px;
+      background: rgba(20, 10, 5, 0.6);
+      border: 1px solid var(--paper-border);
+      border-radius: 4px;
+      text-align: center;
+    }
+    .coin-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .coin-value {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold-accent);
+    }
+    /* Spells Section */
+    .spells-section {
+      margin-bottom: 16px;
+    }
+    .spell-circle-section {
+      margin-bottom: 16px;
+      background: rgba(20, 10, 5, 0.6);
+      border: 2px solid var(--paper-border);
+      border-radius: 8px;
+      padding: 12px;
+    }
+    .spell-circle-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--gold-primary);
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .spell-circle-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold-accent);
+      font-family: 'Cinzel', serif;
+    }
+    .spell-slots {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-light);
+    }
+    .spell-list {
+      display: grid;
+      gap: 6px;
+    }
+    .spell-item {
+      padding: 6px;
+      background: rgba(10, 5, 2, 0.5);
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-light);
+      border-left: 3px solid var(--gold-primary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .spell-item:hover {
+      background: rgba(30, 15, 8, 0.7);
+      border-left-color: var(--gold-accent);
+    }
+    /* Spell Details Popup */
+    .spell-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--paper-bg);
+      border: 2px solid var(--gold-primary);
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      max-width: 95vw;
+      max-height: 85vh;
+      width: 90vw;
+      overflow-y: auto;
+      display: none;
+    }
+    .spell-popup.active {
+      display: block;
+    }
+    .spell-popup-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gold-primary);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .spell-name-large {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--gold-accent);
+      font-family: 'Cinzel', serif;
+    }
+    .spell-close {
+      background: none;
+      border: none;
+      font-size: 1.3rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 4px;
+      transition: color 0.2s ease;
+    }
+    .spell-close:hover {
+      color: var(--gold-accent);
+    }
+    .spell-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .spell-info-item {
+      background: rgba(20, 10, 5, 0.6);
+      border: 1px solid var(--paper-border);
+      border-radius: 4px;
+      padding: 6px;
+    }
+    .spell-info-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+      font-weight: 600;
+      font-family: 'Cinzel', serif;
+      text-align: justify;
+    }
+    .spell-info-value {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-light);
+      text-align: justify;
+    }
+    .spell-description {
+      background: rgba(20, 10, 5, 0.6);
+      border: 1px solid var(--paper-border);
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .spell-at-higher-levels {
+      background: rgba(20, 10, 5, 0.6);
+      border: 1px solid var(--paper-border);
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 12px;
+    }
+    .spell-at-higher-levels h4 {
+      font-size: 0.85rem;
+      color: var(--gold-accent);
+      margin-bottom: 6px;
+      font-family: 'Cinzel', serif;
+    }
+    .spell-at-higher-levels p {
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+    /* Transformations Section */
+    .transformations-section {
+      margin-bottom: 16px;
+    }
+    .creature-list {
+      display: grid;
+      gap: 8px;
+    }
+    .creature-item {
+      padding: 8px;
+      background: rgba(10, 5, 2, 0.5);
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-light);
+      border-left: 3px solid var(--gold-primary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .creature-item:hover {
+      background: rgba(30, 15, 8, 0.7);
+      border-left-color: var(--gold-accent);
+    }
+    .creature-name {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .creature-nd {
+      font-size: 0.9rem;
+      color: var(--gold-accent);
+      margin-left: 12px;
+      min-width: 40px;
+      text-align: center;
+    }
+    .creature-size {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-left: 12px;
+      min-width: 60px;
+      text-align: center;
+    }
+    /* Creature Details Popup */
+    .creature-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--paper-bg);
+      border: 2px solid var(--gold-primary);
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      max-width: 95vw;
+      max-height: 85vh;
+      width: 90vw;
+      overflow-y: auto;
+      display: none;
+    }
+    .creature-popup.active {
+      display: block;
+    }
+    .creature-popup-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gold-primary);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .creature-name-large {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--gold-accent);
+      font-family: 'Cinzel', serif;
+    }
+    .creature-close {
+      background: none;
+      border: none;
+      font-size: 1.3rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 4px;
+      transition: color 0.2s ease;
+    }
+    .creature-close:hover {
+      color: var(--gold-accent);
+    }
+    .creature-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .creature-stat-item {
+      background: rgba(20, 10, 5, 0.6);
+      border: 1px solid var(--paper-border);
+      border-radius: 4px;
+      padding: 6px;
+    }
+    .creature-stat-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+      font-weight: 600;
+      font-family: 'Cinzel', serif;
+      text-align: justify;
+    }
+    .creature-stat-value {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-light);
+      text-align: justify;
+    }
+    .creature-traits {
+      background: rgba(20, 10, 5, 0.6);
+      border: 1px solid var(--paper-border);
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 12px;
+    }
+    .creature-traits h4 {
+      font-size: 0.85rem;
+      color: var(--gold-accent);
+      margin-bottom: 6px;
+      font-family: 'Cinzel', serif;
+    }
+    .creature-actions {
+      background: rgba(20, 10, 5, 0.6);
+      border: 1px solid var(--paper-border);
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 12px;
+    }
+    .creature-actions h4 {
+      font-size: 0.85rem;
+      color: var(--gold-accent);
+      margin-bottom: 6px;
+      font-family: 'Cinzel', serif;
+    }
+    /* Responsive */
+    @media (min-width: 769px) {
+      .sheet-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+      .character-info {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+      .attributes-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+      .quick-stats {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+      .spell-info {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+      .spell-popup {
+        max-width: 600px;
+        width: auto;
+      }
+      .attack-row {
+        grid-template-columns: 1.5fr 0.6fr 1.2fr 1fr 1.2fr;
+      }
+      .creature-list {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-left">
+        <a href="index.html" class="back-button">
+          <i class="fas fa-arrow-left"></i> Voltar
+        </a>
+        <div class="campaign-title">Ginho Pinho-Pinha</div>
+      </div>
+      <h1 class="sheet-title">Descida ao Avernus|</h1>
+    </header>
+    <!-- Tab Navigation -->
+    <div class="tabs">
+      <button class="tab-button active" data-tab="basico">Básico</button>
+      <button class="tab-button" data-tab="combate">Combate</button>
+      <button class="tab-button" data-tab="habilidades">Habilidades</button>
+      <button class="tab-button" data-tab="inventario">Inventário</button>
+      <button class="tab-button" data-tab="magias">Magias</button>
+      <button class="tab-button" data-tab="transformacoes">Transformações</button>
+    </div>
+    <!-- Tab Content -->
+    <div class="tab-content active" id="basico">
+      <div class="sheet-container">
+        <div class="sheet-section">
+          <h2 class="section-header"><i class="fas fa-user"></i> Informações Básicas</h2>
+          <div class="character-info">
+            <div class="character-image">
+              <img src="chara-ginho-sheet.png" alt="Ginho Pinho-Pinha" class="character-img" onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='flex';">
+            </div>
+            <div class="info-field">
+              <label class="info-label">Nome do Personagem</label>
+              <div class="info-value">Ginho Pinho-Pinha</div>
+            </div>
+            <div class="info-field">
+              <label class="info-label">Espécie</label>
+              <div class="info-value">Humano</div>
+            </div>
+            <div class="info-field">
+              <label class="info-label">Classe</label>
+              <div class="info-value">Druida</div>
+            </div>
+            <div class="info-field">
+              <label class="info-label">Subclasse</label>
+              <div class="info-value">N/A</div>
+            </div>
+            <div class="info-field">
+              <label class="info-label">Antecedente</label>
+              <div class="info-value">Eremita</div>
+            </div>
+            <div class="info-field">
+              <label class="info-label">Nível</label>
+              <div class="info-value">1</div>
+            </div>
+            <div class="info-field">
+              <label class="info-label">XP</label>
+              <div class="info-value">0</div>
+            </div>
+            <div class="info-field">
+              <label class="info-label">Alinhamento</label>
+              <div class="info-value">Neutro Bom</div>
+            </div>
+          </div>
+          <h2 class="section-header"><i class="fas fa-book-open"></i> História e Personalidade</h2>
+          <div class="info-field">
+            <label class="info-label">História Pessoal</label>
+            <div class="info-value">Sou Ginho Pinho-Pinha, druida caçula de uma família rica, que escolheu viver entre os esquecidos de Baldur’s Gate curando pessoas e terras com a natureza; ao lado de Sir Ninico, minha fuinha desperta, carrego um antigo inimigo, um mapa ligado ao Coração da Floresta Perdida, e sigo com os Cavaleiros Infernais para restaurar campos corrompidos e provar que a vida pode florescer até no Inferno.</div>
+          </div>
+          <div class="info-field">
+            <label class="info-label">Personalidade</label>
+            <div class="info-value">Sou calmo, observador e paciente, prefiro ouvir a terra e os animais antes das pessoas e ajo sempre pensando no equilíbrio a longo prazo.</div>
+          </div>
+          <div class="info-field">
+            <label class="info-label">Ideais</label>
+            <div class="info-value">Acredito que a natureza deve ser preservada e restaurada mesmo em meio à guerra, pois só ela pode garantir ordem, paz e continuidade ao mundo.</div>
+          </div>
+          <div class="info-field">
+            <label class="info-label">Laços</label>
+            <div class="info-value">Sou profundamente ligado à minha família, a Sir Ninico e à missão de curar terras e pessoas marcadas pela corrupção demoníaca.</div>
+          </div>
+          <div class="info-field">
+            <label class="info-label">Defeitos</label>
+            <div class="info-value">Estou disposto a me sacrificar além do razoável e carrego rancor silencioso contra quem ameaça aquilo que amo ou distorce a ordem natural.</div>
+          </div>
+        </div>
+        <div class="sheet-section">
+          <h2 class="section-header"><i class="fas fa-dashboard"></i> Estatísticas Básicas</h2>
+          <div class="quick-stats">
+            <div class="stat-item">
+              <div class="stat-label">Classe de Armadura</div>
+              <div class="stat-value">13</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">Pontos de Vida</div>
+              <div class="stat-value">13</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">Iniciativa</div>
+              <div class="stat-value">+0</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">Deslocamento</div>
+              <div class="stat-value">25 ft</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">Tamanho</div>
+              <div class="stat-value">Pequeno</div>
+            </div>
+          </div>
+          <h2 class="section-header"><i class="fas fa-dice"></i> Atributos</h2>
+          <div class="attributes-grid">
+            <div class="attribute-box">
+              <div class="attribute-name">Força</div>
+              <div class="attribute-value">8</div>
+              <div class="attribute-modifier">-1</div>
+            </div>
+            <div class="attribute-box">
+              <div class="attribute-name">Destreza</div>
+              <div class="attribute-value">10</div>
+              <div class="attribute-modifier">+0</div>
+            </div>
+            <div class="attribute-box">
+              <div class="attribute-name">Constituição</div>
+              <div class="attribute-value">16</div>
+              <div class="attribute-modifier">+3</div>
+            </div>
+            <div class="attribute-box">
+              <div class="attribute-name">Inteligência</div>
+              <div class="attribute-value">12</div>
+              <div class="attribute-modifier">+1</div>
+            </div>
+            <div class="attribute-box">
+              <div class="attribute-name">Sabedoria</div>
+              <div class="attribute-value">17</div>
+              <div class="attribute-modifier">+3</div>
+            </div>
+            <div class="attribute-box">
+              <div class="attribute-name">Carisma</div>
+              <div class="attribute-value">11</div>
+              <div class="attribute-modifier">+0</div>
+            </div>
+          </div>
+          <h2 class="section-header"><i class="fas fa-shield-alt"></i> Salvaguardas</h2>
+          <div class="saving-throws">
+            <div class="skill-item">
+              <div class="skill-checkbox"></div>
+              <div class="skill-name">Força</div>
+              <div class="skill-modifier">-1</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-checkbox"></div>
+              <div class="skill-name">Destreza</div>
+              <div class="skill-modifier">+0</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-checkbox"></div>
+              <div class="skill-name">Constituição</div>
+              <div class="skill-modifier">+3</div>
+            </div>
+            <div class="skill-item">
+               <div class="skill-checkbox checked"></div>
+              <div class="skill-name">Inteligência</div>
+              <div class="skill-modifier">+3</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-checkbox checked"></div>
+              <div class="skill-name">Sabedoria</div>
+              <div class="skill-modifier">+5</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-checkbox"></div>
+              <div class="skill-name">Carisma</div>
+              <div class="skill-modifier">+0</div>
+            </div>
+          </div>
+          <h2 class="section-header"><i class="fas fa-running"></i> Perícias</h2>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-checkbox"></div>
+              <div class="skill-name">Acrobacia</div>
+              <div class="skill-modifier">+0</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-checkbox"></div>
+              <div class="skill-name">Arcanismo</div>
+              <div class="skill-modifier">+4</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-checkbox"></div>
+              <div class="skill-name">Atletismo</div>
+              <div class="skill-modifier">-1</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-checkbox"></div>
+              <div class="skill-name">Atuação</div>
+              <div class="skill-modifier">+0</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-checkbox"></div>
+              <div class="skill-name">Enganação</div>
+              <div class="skill-modifier">+0</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-checkbox"></div>
+              <div class="skill-name">Furtividade</div>
+              <div class="skill-modifier">+0</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-checkbox"></div>
+              <div class="skill-name">História</div>
+              <div class="skill-modifier">+1</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-checkbox"></div>
+              <div class="skill-name">Intimidação</div>
+              <div class="skill-modifier">+0</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-checkbox"></div>
+              <div class="skill-name">Intuição</div>
+              <div class="skill-modifier">+3</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-checkbox"></div>
+              <div class="skill-name">Investigação</div>
+              <div class="skill-modifier">+1</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-checkbox checked"></div>
+              <div class="skill-name">Lidar com Animais</div>
+              <div class="skill-modifier">+5</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-checkbox checked"></div>
+              <div class="skill-name">Medicina</div>
+              <div class="skill-modifier">+7</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-checkbox checked"></div>
+              <div class="skill-name">Natureza</div>
+              <div class="skill-modifier">+6</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-checkbox checked"></div>
+              <div class="skill-name">Percepção</div>
+              <div class="skill-modifier">+5</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-checkbox"></div>
+              <div class="skill-name">Persuasão</div>
+              <div class="skill-modifier">+0</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-checkbox"></div>
+              <div class="skill-name">Prestidigitação</div>
+              <div class="skill-modifier">+0</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-checkbox checked"></div>
+              <div class="skill-name">Religião</div>
+              <div class="skill-modifier">+3</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-checkbox"></div>
+              <div class="skill-name">Sobrevivência</div>
+              <div class="skill-modifier">+3</div>
+            </div>
+          </div>
+        </div>
+        <div class="sheet-section">
+          <h2 class="section-header"><i class="fas fa-crown"></i> Proficiências</h2>
+          <div class="info-field">
+            <label class="info-label">Armaduras</label>
+            <div class="info-value">Leve, Escudos</div>
+          </div>
+          <div class="info-field">
+            <label class="info-label">Armas</label>
+            <div class="info-value">Simples</div>
+          </div>
+          <div class="info-field">
+            <label class="info-label">Ferramentas</label>
+            <div class="info-value">Kit de Herbalismo</div>
+          </div>
+          <div class="info-field">
+            <label class="info-label">Idiomas</label>
+            <div class="info-value">Comum, Dracônico, Gnômico, Druídico</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-content" id="combate">
+      <div class="sheet-container">
+        <div class="sheet-section">
+          <div class="attacks-section">
+            <h2 class="section-header"><i class="fas fa-sword"></i> Ataques</h2>
+            <div class="attacks-grid">
+              <div class="attack-item" onclick="toggleAttack(this)">
+                <div class="attack-row">
+                  <div class="attack-cell"><strong>Cajado</strong></div>
+                  <div class="attack-cell">+1</div>
+                  <div class="attack-cell">1d6 - 1 (concussão)</div>
+                  <div class="attack-cell">Corpo a corpo (1,5 m)</div>
+                  <div class="attack-cell">Versátil</div>
+                </div>
+                <div class="attack-description">
+                  <p>Versátil. Esta arma pode ser usada com uma ou duas mãos para causar 1d8 pontos de dano.</p>
+                </div>
+              </div>
+              <div class="attack-item" onclick="toggleAttack(this)">
+                <div class="attack-row">
+                  <div class="attack-cell"><strong>Foice</strong></div>
+                  <div class="attack-cell">+1</div>
+                  <div class="attack-cell">1d4 - 1 (corte)</div>
+                  <div class="attack-cell">Corpo a corpo (1,5 m)</div>
+                  <div class="attack-cell">Versátil</div>
+                </div>
+                <div class="attack-description">
+                  <p>Leve. Uma arma leve é ​​pequena e fácil de manusear, sendo ideal para uso em combates com duas armas.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-content" id="habilidades">
+      <div class="sheet-container">
+        <div class="sheet-section">
+          <h2 class="section-header"><i class="fas fa-bolt"></i> Habilidades</h2>
+          <div class="abilities-section">
+            <div class="abilities-category">
+              <div class="category-title">Habilidades de Classe</div>
+              <div class="ability-box" onclick="toggleAbility(this)">
+                <div class="ability-header">
+                  <div class="ability-title">Conjuração</div>
+                  <div class="ability-source">Druída, Nível 1</div>
+                </div>
+                <div class="ability-description">
+                  Como Druida, você lança feitiços estudando as forças místicas da natureza, com as regras detalhadas no Capítulo 7 do livro; você começa sabendo dois truques (magias de nível 0) 
+                  da lista de Druida, ganhando mais nos níveis 4 e 10 e podendo trocar um a cada novo nível de Druida. <br><br>A tabela "Características do Druida" indica seus espaços de magia de 1º nível 
+                  ou superior, que são recuperados após um Descanso Longo, e a quantidade de magias de 1º nível ou superior que você pode ter preparadas; você prepara uma nova lista de magias após 
+                  cada Descanso Longo, escolhendo feitiços da lista de Druida que você tem espaços para lançar, e usa Sabedoria como sua habilidade de conjuração, podendo utilizar um Foco Druídico 
+                  como seu foco de conjuração.
+                </div>
+              </div>
+              <div class="ability-box" onclick="toggleAbility(this)">
+                <div class="ability-header">
+                  <div class="ability-title">Idioma Druídico</div>
+                  <div class="ability-source">Druída, Nível 1</div>
+                </div>
+                <div class="ability-description">
+                  Você aprende o Druídico, o idioma secreto dos druidas, e ganha a habilidade mágica de se comunicar com animais, tendo permanentemente a magia Falar com Animais preparada. 
+                  Você também pode deixar mensagens ocultas em Druídico, que são automaticamente identificadas por outros que conhecem o idioma, enquanto os demais precisam de um teste de 
+                  Inteligência (Investigação) CD 15 para perceber sua presença.
+                </div>
+              </div>
+              <div class="ability-box" onclick="toggleAbility(this)">
+                <div class="ability-header">
+                  <div class="ability-title">Ordem Primal: Xamã</div>
+                  <div class="ability-source">Druída, Nível 1</div>
+                </div>
+                <div class="ability-description">
+                  Sua profunda ligação mística com a natureza garante a você um truque (cantrip) adicional da lista de magias de Druida, e também lhe confere um bônus igual ao seu modificador de Sabedoria (mínimo de +1) em seus testes de Inteligência de Arcanismo ou Natureza.
+                </div>
+              </div>
+            </div>
+            <div class="abilities-category">
+              <div class="category-title">Traços de Espécie</div>
+              <div class="ability-box" onclick="toggleAbility(this)">
+                <div class="ability-header">
+                  <div class="ability-title">Eficiente</div>
+                  <div class="ability-source">Humano</div>
+                </div>
+                <div class="ability-description">
+                  Você adquire Inspiração Heroica sempre que completar um Descanso Longo.
+                </div>
+              </div>
+              <div class="ability-box" onclick="toggleAbility(this)">
+                <div class="ability-header">
+                  <div class="ability-title">Hábil</div>
+                  <div class="ability-source">Humano</div>
+                </div>
+                <div class="ability-description">
+                  Você adquire proficiência em uma perícia à sua escolha.
+                </div>
+              </div>
+              <div class="ability-box" onclick="toggleAbility(this)">
+                <div class="ability-header">
+                  <div class="ability-title">Versátil</div>
+                  <div class="ability-source">Humano</div>
+                </div>
+                <div class="ability-description">
+                  Você adquire um talento de Origem à sua escolha (veja o capítulo 5).
+                </div>
+              </div>
+            </div>
+            <div class="abilities-category">
+              <div class="category-title">Talentos</div>
+              <div class="ability-box" onclick="toggleAbility(this)">
+                <div class="ability-header">
+                  <div class="ability-title">Curandeiro</div>
+                  <div class="ability-source">Antecedente: Eremita</div>
+                </div>
+                <div class="ability-description">
+                  Você adquire os seguintes benefícios.<br><br>
+                  <strong>Médico de Combate.</strong> Caso tenha um Kit de Curandeiro, você pode gastar um uso e cuidar de uma criatura até 1,5 metro de você como uma ação Usar Objeto. Essa criatura pode gastar um dos Dados de Pontos de Vida dela e você joga esse dado. A criatura recupera um número de Pontos de Vida igual à jogada mais o seu Bônus de Proficiência.<br><br>
+                  <strong>Cura Garantida.</strong> Sempre que jogar um dado para determinar o número de Pontos de Vida que você recupera com uma magia ou com o benefício do talento Médico de Combate, você pode jogar novamente o dado se o resultado for 1, e você deve usar a nova jogada.
+                </div>
+              </div>
+              <div class="ability-box" onclick="toggleAbility(this)">
+                <div class="ability-header">
+                  <div class="ability-title">Vigoroso</div>
+                  <div class="ability-source">Espécie: Humano</div>
+                </div>
+                <div class="ability-description">
+                  Seus Pontos de Vida máximos aumentam em um valor igual ao dobro do seu nível de personagem quando você obtém este talento. Sempre que você alcança um nível de personagem depois disso, seus Pontos de Vida máximos aumentam em 2 Pontos de Vida adicionais.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-content" id="inventario">
+      <div class="sheet-container">
+        <div class="sheet-section">
+          <h2 class="section-header"><i class="fas fa-box"></i> Inventário</h2>
+          <div class="inventory-content">
+            <div class="weight-info">
+              <div class="weight-label">Peso Atual / Peso Máximo</div>
+              <div class="weight-value">19 kg / 56 kg</div>
+            </div>
+            <div class="inventory-scrollable">
+              <div class="inventory-list">
+                <div class="inventory-item" onclick="toggleInventoryItem(this)">
+                  <div class="item-row">
+                    <div class="item-name">Cajado</div>
+                    <div class="item-quantity">1</div>
+                    <div class="item-weight">2 kg</div>
+                  </div>
+                  <div class="item-description">
+                    <p>Versátil. Esta arma pode ser usada com uma ou duas mãos para causar 1d8 pontos de dano.</p>
+                  </div>
+                </div>
+                <div class="inventory-item" onclick="toggleInventoryItem(this)">
+                  <div class="item-row">
+                    <div class="item-name">Foice</div>
+                    <div class="item-quantity">1</div>
+                    <div class="item-weight">1 kg</div>
+                  </div>
+                  <div class="item-description">
+                    <p>Leve. Uma arma leve é ​​pequena e fácil de manusear, sendo ideal para uso em combates com duas armas.</p>
+                  </div>
+                </div>
+                <div class="inventory-item" onclick="toggleInventoryItem(this)">
+                  <div class="item-row">
+                    <div class="item-name">Lâmpada</div>
+                    <div class="item-quantity">1</div>
+                    <div class="item-weight">0,5 kg</div>
+                  </div>
+                  <div class="item-description">
+                    <p>Uma Lâmpada usa Óleo para combustão para emitir Luz Plena em um raio de 4,5 metros e Meia-luz por mais 9 metros</p>
+                  </div>
+                </div>
+                <div class="inventory-item" onclick="toggleInventoryItem(this)">
+                  <div class="item-row">
+                    <div class="item-name">Roupas de Viagem</div>
+                    <div class="item-quantity">1</div>
+                    <div class="item-weight">2 kg</div>
+                  </div>
+                  <div class="item-description">
+                    <p>Roupas de Viagem são roupas resistentes projetadas para viagens em vários ambientes</p>
+                  </div>
+                </div>
+                <div class="inventory-item" onclick="toggleInventoryItem(this)">
+                  <div class="item-row">
+                    <div class="item-name">Armadura de Couro</div>
+                    <div class="item-quantity">1</div>
+                    <div class="item-weight">5 kg</div>
+                  </div>
+                  <div class="item-description">
+                    <p>11 + modificador de Des</p>
+                  </div>
+                </div>
+                <div class="inventory-item" onclick="toggleInventoryItem(this)">
+                  <div class="item-row">
+                    <div class="item-name">Escudo</div>
+                    <div class="item-quantity">1</div>
+                    <div class="item-weight">3 kg</div>
+                  </div>
+                  <div class="item-description">
+                    <p>+2 de CA</p>
+                  </div>
+                </div>
+                <div class="inventory-item" onclick="toggleInventoryItem(this)">
+                  <div class="item-row">
+                    <div class="item-name">Óleo</div>
+                    <div class="item-quantity">5</div>
+                    <div class="item-weight">0,5 kg</div>
+                  </div>
+                  <div class="item-description">
+                    <p>O óleo pode ser arremessado para cobrir uma criatura ou objeto, causando dano ígneo extra se for incendiado, espalhado no chão para criar uma área que causa dano por algumas rodadas, ou usado como combustível para lâmpadas e lanternas por até 6 horas.</p>
+                  </div>
+                </div>
+                <div class="inventory-item" onclick="toggleInventoryItem(this)">
+                  <div class="item-row">
+                    <div class="item-name">Kit de Curandeiro</div>
+                    <div class="item-quantity">1</div>
+                    <div class="item-weight">1,5 kg</div>
+                  </div>
+                  <div class="item-description">
+                    <p>O Kit de Curandeiro possui 10 usos e permite, com uma ação Usar Objeto, estabilizar automaticamente uma criatura inconsciente com 0 Pontos de Vida, sem necessidade de teste de Medicina.</p>
+                  </div>
+                </div>
+                <div class="inventory-item" onclick="toggleInventoryItem(this)">
+                  <div class="item-row">
+                    <div class="item-name">Kit de Herbalismo</div>
+                    <div class="item-quantity">1</div>
+                    <div class="item-weight">1,5 kg</div>
+                  </div>
+                  <div class="item-description">
+                    <p>Atributo: Inteligência <br>
+                    Usar Objeto: Identificar uma planta (CD 10) <br>
+                    Fabricação: Antitoxina, Kit de Curandeiro, Poção de Cura, Vela.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="coins-section">
+            <h3 class="section-header"><i class="fas fa-coins"></i> Moedas</h3>
+            <div class="coins-grid">
+              <div class="coin-item">
+                <div class="coin-label">PP (Platina)</div>
+                <div class="coin-value">0</div>
+              </div>
+              <div class="coin-item">
+                <div class="coin-label">PO (Ouro)</div>
+                <div class="coin-value">27</div>
+              </div>
+              <div class="coin-item">
+                <div class="coin-label">PE (Prata)</div>
+                <div class="coin-value">5</div>
+              </div>
+              <div class="coin-item">
+                <div class="coin-label">PC (Cobre)</div>
+                <div class="coin-value">12</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-content" id="magias">
+      <div class="sheet-container">
+        <div class="sheet-section">
+          <h2 class="section-header"><i class="fas fa-spell-check"></i> Magias</h2>
+          <div class="spells-section">
+            <div class="spell-circle-section">
+              <div class="spell-circle-header">
+                <div class="spell-circle-title">Truques</div>
+                <div class="spell-slots">Ilimitado</div>
+              </div>
+              <div class="spell-list">
+                <div class="spell-item" onclick="showSpellDetails('Druidismo')">Druidismo</div>
+                <div class="spell-item" onclick="showSpellDetails('Pedra Mágica')">Pedra Mágica</div>
+                <div class="spell-item" onclick="showSpellDetails('Ataque Furtivo')">Ataque Furtivo</div>
+                <div class="spell-item" onclick="showSpellDetails('Mãos Flamejantes')">Mãos Flamejantes</div>
+              </div>
+            </div>
+            <div class="spell-circle-section">
+              <div class="spell-circle-header">
+                <div class="spell-circle-title">1º Círculo</div>
+                <div class="spell-slots">2 / 2</div>
+              </div>
+              <div class="spell-list">
+                <div class="spell-item" onclick="showSpellDetails('Detectar Magia')">Detectar Magia</div>
+                <div class="spell-item" onclick="showSpellDetails('Curar Ferimentos')">Curar Ferimentos</div>
+                <div class="spell-item" onclick="showSpellDetails('Proteção contra o Mal e o Bem')">Proteção contra o Mal e o Bem</div>
+                <div class="spell-item" onclick="showSpellDetails('Escudo Arcano')">Escudo Arcano</div>
+              </div>
+            </div>
+            <div class="spell-circle-section">
+              <div class="spell-circle-header">
+                <div class="spell-circle-title">2º Círculo</div>
+                <div class="spell-slots">0 / 0</div>
+              </div>
+              <div class="spell-list">
+                <div class="spell-item" onclick="showSpellDetails('Força Mágica')">Força Mágica</div>
+                <div class="spell-item" onclick="showSpellDetails('Escudo da Fé')">Escudo da Fé</div>
+              </div>
+            </div>
+            <div class="spell-circle-section">
+              <div class="spell-circle-header">
+                <div class="spell-circle-title">3º Círculo</div>
+                <div class="spell-slots">0 / 0</div>
+              </div>
+              <div class="spell-list">
+                <div class="spell-item" onclick="showSpellDetails('Disparo de Relâmpago')">Disparo de Relâmpago</div>
+                <div class="spell-item" onclick="showSpellDetails('Voo')">Voo</div>
+              </div>
+            </div>
+            <div class="spell-circle-section">
+              <div class="spell-circle-header">
+                <div class="spell-circle-title">4º Círculo</div>
+                <div class="spell-slots">0 / 0</div>
+              </div>
+              <div class="spell-list">
+                <div class="spell-item" onclick="showSpellDetails('Invocar Elementais Menores')">Invocar Elementais Menores</div>
+                <div class="spell-item" onclick="showSpellDetails('Banimento')">Banimento</div>
+              </div>
+            </div>
+            <div class="spell-circle-section">
+              <div class="spell-circle-header">
+                <div class="spell-circle-title">5º Círculo</div>
+                <div class="spell-slots">0 / 0</div>
+              </div>
+              <div class="spell-list">
+                <div class="spell-item" onclick="showSpellDetails('Teletransporte')">Teletransporte</div>
+                <div class="spell-item" onclick="showSpellDetails('Murro de Pedra')">Murro de Pedra</div>
+              </div>
+            </div>
+            <div class="spell-circle-section">
+              <div class="spell-circle-header">
+                <div class="spell-circle-title">6º Círculo</div>
+                <div class="spell-slots">0 / 0</div>
+              </div>
+              <div class="spell-list">
+                <div class="spell-item" onclick="showSpellDetails('Cadeia de Relâmpagos')">Cadeia de Relâmpagos</div>
+                <div class="spell-item" onclick="showSpellDetails('Invocar Fera')">Invocar Fera</div>
+              </div>
+            </div>
+            <div class="spell-circle-section">
+              <div class="spell-circle-header">
+                <div class="spell-circle-title">7º Círculo</div>
+                <div class="spell-slots">0 / 0</div>
+              </div>
+              <div class="spell-list">
+                <div class="spell-item" onclick="showSpellDetails('Palavra de Poder: Estupefazer')">Palavra de Poder: Estupefazer</div>
+                <div class="spell-item" onclick="showSpellDetails('Invocar Elemental')">Invocar Elemental</div>
+              </div>
+            </div>
+            <div class="spell-circle-section">
+              <div class="spell-circle-header">
+                <div class="spell-circle-title">8º Círculo</div>
+                <div class="spell-slots">0 / 0</div>
+              </div>
+              <div class="spell-list">
+                <div class="spell-item" onclick="showSpellDetails('Domínio Divino')">Domínio Divino</div>
+                <div class="spell-item" onclick="showSpellDetails('Invocar Ser Celestial')">Invocar Ser Celestial</div>
+              </div>
+            </div>
+            <div class="spell-circle-section">
+              <div class="spell-circle-header">
+                <div class="spell-circle-title">9º Círculo</div>
+                <div class="spell-slots">0 / 0</div>
+              </div>
+              <div class="spell-list">
+                <div class="spell-item" onclick="showSpellDetails('Desejo')">Desejo</div>
+                <div class="spell-item" onclick="showSpellDetails('Avassalador')">Avassalador</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-content" id="transformacoes">
+      <div class="sheet-container">
+        <div class="sheet-section">
+          <h2 class="section-header"><i class="fas fa-paw"></i> Transformações</h2>
+          <div class="transformations-section">
+            <div class="creature-list">
+              <div class="creature-item" onclick="showCreatureDetails('Aranha Gigante')">
+                <div class="creature-name">Aranha Gigante</div>
+                <div class="creature-nd">ND 1</div>
+                <div class="creature-size">Grande</div>
+              </div>
+              <div class="creature-item" onclick="showCreatureDetails('Lobo')">
+                <div class="creature-name">Lobo</div>
+                <div class="creature-nd">ND 1/4</div>
+                <div class="creature-size">Médio</div>
+              </div>
+              <div class="creature-item" onclick="showCreatureDetails('Urso Pardo')">
+                <div class="creature-name">Urso Pardo</div>
+                <div class="creature-nd">ND 3</div>
+                <div class="creature-size">Grande</div>
+              </div>
+              <div class="creature-item" onclick="showCreatureDetails('Dragão Vermelho Jovem')">
+                <div class="creature-name">Dragão Vermelho Jovem</div>
+                <div class="creature-nd">ND 10</div>
+                <div class="creature-size">Enorme</div>
+              </div>
+              <div class="creature-item" onclick="showCreatureDetails('Troll')">
+                <div class="creature-name">Troll</div>
+                <div class="creature-nd">ND 5</div>
+                <div class="creature-size">Grande</div>
+              </div>
+              <div class="creature-item" onclick="showCreatureDetails('Elemental de Fogo')">
+                <div class="creature-name">Elemental de Fogo</div>
+                <div class="creature-nd">ND 5</div>
+                <div class="creature-size">Grande</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Spell Details Popup -->
+    <div id="spellPopup" class="spell-popup">
+      <div class="spell-popup-header">
+        <div class="spell-name-large" id="spellName">Nome da Magia</div>
+        <button class="spell-close" onclick="hideSpellDetails()">×</button>
+      </div>
+      <div class="spell-info">
+        <div class="spell-info-item">
+          <div class="spell-info-label">Círculo de Magia</div>
+          <div class="spell-info-value" id="spellCircle">1º Círculo</div>
+        </div>
+        <div class="spell-info-item">
+          <div class="spell-info-label">Escola de Magia</div>
+          <div class="spell-info-value" id="spellSchool">Abjuração</div>
+        </div>
+        <div class="spell-info-item">
+          <div class="spell-info-label">Conjuração</div>
+          <div class="spell-info-value" id="spellCastTime">1 ação</div>
+        </div>
+        <div class="spell-info-item">
+          <div class="spell-info-label">Alcance</div>
+          <div class="spell-info-value" id="spellRange">12 metros</div>
+        </div>
+        <div class="spell-info-item">
+          <div class="spell-info-label">Componentes</div>
+          <div class="spell-info-value" id="spellComponents">V, S, M (uma pequena esfera de metal)</div>
+        </div>
+        <div class="spell-info-item">
+          <div class="spell-info-label">Duração</div>
+          <div class="spell-info-value" id="spellDuration">Concentração, até 10 minutos</div>
+        </div>
+      </div>
+      <div class="spell-description">
+        <h4>Descrição</h4>
+        <p id="spellDescription">...</p>
+      </div>
+      <div class="spell-at-higher-levels">
+        <h4>Em Níveis Mais Altos</h4>
+        <p id="spellHigherLevels">...</p>
+      </div>
+    </div>
+    <!-- Creature Details Popup -->
+    <div id="creaturePopup" class="creature-popup">
+      <div class="creature-popup-header">
+        <div class="creature-name-large" id="creatureName">Nome da Criatura</div>
+        <button class="creature-close" onclick="hideCreatureDetails()">×</button>
+      </div>
+      <div class="creature-stats">
+        <div class="creature-stat-item">
+          <div class="creature-stat-label">CA</div>
+          <div class="creature-stat-value" id="creatureCA">14</div>
+        </div>
+        <div class="creature-stat-item">
+          <div class="creature-stat-label">PV</div>
+          <div class="creature-stat-value" id="creaturePV">26 (4d10 + 4)</div>
+        </div>
+        <div class="creature-stat-item">
+          <div class="creature-stat-label">Deslocamento</div>
+          <div class="creature-stat-value" id="creatureSpeed">9 m, Escalada 9 m</div>
+        </div>
+        <div class="creature-stat-item">
+          <div class="creature-stat-label">Iniciativa</div>
+          <div class="creature-stat-value" id="creatureInitiative">+3 (13)</div>
+        </div>
+      </div>
+      <div class="creature-stats">
+        <div class="creature-stat-item">
+          <div class="creature-stat-label">For</div>
+          <div class="creature-stat-value" id="creatureFor">14 (+2)</div>
+        </div>
+        <div class="creature-stat-item">
+          <div class="creature-stat-label">Des</div>
+          <div class="creature-stat-value" id="creatureDes">16 (+3)</div>
+        </div>
+        <div class="creature-stat-item">
+          <div class="creature-stat-label">Con</div>
+          <div class="creature-stat-value" id="creatureCon">12 (+1)</div>
+        </div>
+        <div class="creature-stat-item">
+          <div class="creature-stat-label">Int</div>
+          <div class="creature-stat-value" id="creatureInt">2 (-4)</div>
+        </div>
+        <div class="creature-stat-item">
+          <div class="creature-stat-label">Sab</div>
+          <div class="creature-stat-value" id="creatureSab">11 (+0)</div>
+        </div>
+        <div class="creature-stat-item">
+          <div class="creature-stat-label">Car</div>
+          <div class="creature-stat-value" id="creatureCar">4 (-3)</div>
+        </div>
+      </div>
+      <div class="creature-traits">
+        <h4>Traços</h4>
+        <div id="creatureTraits">
+          <p><strong>Andar na Teia.</strong> A aranha ignora restrições de movimento causadas por teias e sabe a localização de qualquer outra criatura em contato com a mesma teia.</p>
+          <p><strong>Escalada de Aranha.</strong> A aranha pode escalar superfícies difíceis, inclusive ao longo de tetos, sem precisar realizar um teste de atributo.</p>
+        </div>
+      </div>
+      <div class="creature-actions">
+        <h4>Ações</h4>
+        <div id="creatureActions">
+          <p><strong>Mordida.</strong> Jogada de Ataque Corpo a Corpo: +5 para acertar, alcance 1,5 m. Dano: 7 (1d8 + 3) Perfurante mais 7 (2d6) Venenoso.</p>
+          <p><strong>Teia (Recarga 5–6).</strong> Salvaguarda de Destreza: CD 13, uma criatura à vista da aranha até 18 metros. Falha: O alvo tem a condição Contido até que a teia seja destruída (CA 10; PV 5; Vulnerabilidade a dano Igneo; Imunidade a dano Psíquico e Venenoso).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Tab switching functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const tabContents = document.querySelectorAll('.tab-content');
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Remove active class from all buttons and contents
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          tabContents.forEach(content => content.classList.remove('active'));
+          // Add active class to clicked button
+          button.classList.add('active');
+          // Show corresponding content
+          const tabId = button.getAttribute('data-tab');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+    });
+    // Existing toggle functions
+    function toggleAbility(element) {
+      element.classList.toggle('expanded');
+    }
+    function toggleAttack(element) {
+      element.classList.toggle('expanded');
+    }
+    function toggleInventoryItem(element) {
+      element.classList.toggle('expanded');
+    }
+    function showSpellDetails(spellName) {
+      const popup = document.getElementById('spellPopup');
+      const spellData = {
+        'Druidismo': { circle: 'Truque',  school: 'Transmutação',  castTime: '1 ação',  range: '9 metros',  components: 'V, S',  duration: 'Instantânea',  description: 'Sussurrando para os espíritos da natureza, você cria um dos seguintes efeitos dentro do alcance: (1) Brincar com Fogo: você acende ou apaga uma vela, tocha ou pequena fogueira; (2) Efeito Sensorial: você cria um efeito sensorial inofensivo — como folhas caindo, uma brisa suave, sons de animais ou odores fracos — que caiba em um cubo de 1,5 metro; (3) Florescimento: você faz uma flor desabrochar, uma vagem se abrir ou um broto de folha se abrir; (4) Sensor Climático: você cria um pequeno efeito sensorial que prevê o clima local nas próximas 24 horas (ex.: esfera dourada para céu limpo, nuvem para chuva, flocos para neve). Este último efeito persiste por 1 rodada.',  higherLevels: 'Esta magia não aumenta em nível mais alto.' },
+        'Pedra Mágica': {  circle: 'Truque',  school: 'Transmutação',  castTime: '1 ação bônus',  range: 'Toque',  components: 'V, S',  duration: '1 minuto',  description: 'Você toca de uma a três pequenas pedras e as imbui com magia. Você ou outra criatura pode realizar um ataque mágico à distância com uma dessas pedras, arremessando-a ou disparando-a com uma funda. Se arremessada, a pedra possui alcance de 18 metros. Se outra criatura realizar o ataque, ela utiliza o seu modificador de habilidade de conjuração, e não o dela, na jogada de ataque. Em caso de acerto, o alvo sofre 1d6 de dano contundente + o seu modificador de habilidade de conjuração. Independente de acertar ou errar, a magia se encerra na pedra após o ataque.',  higherLevels: 'Se você conjurar esta magia novamente, qualquer pedra ainda afetada por esta magia perde o efeito imediatamente.'},
+        'Ataque Furtivo': { circle: 'Truque', school: 'Conjuração', castTime: '1 ação', range: 'Pessoal', components: 'V', duration: 'Instantânea', description: 'Você faz um ataque furtivo com uma arma que esteja empunhando, causando dano adicional. O dano adicional é de 1d6.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 1º nível ou superior, o dano adicional aumenta em 1d6 para cada dois níveis acima do truque.' },
+        'Mãos Flamejantes': { circle: 'Truque', school: 'Evocação', castTime: '1 ação', range: '12 metros', components: 'V, S', duration: 'Instantânea', description: 'Você conjura uma labareda que atinge todas as criaturas em um cone de 4,5 metros. Cada criatura nessa área deve fazer um teste de resistência de Destreza. Em uma falha, ela sofre 1d8 de dano de fogo, ou metade desse dano em uma resistência bem-sucedida.', higherLevels: 'O dano aumenta em 1d8 quando você atinge o 5º, 11º e 17º níveis de conjurador.' },
+        'Detectar Magia': { circle: '1º Círculo', school: 'Adivinhação', castTime: '1 ação', range: 'Pessoal', components: 'V, S', duration: 'Concentração, até 10 minutos', description: 'Para a duração da magia, você detecta magias dentro de 30 metros de você. Você pode ver uma aura fraca ao redor de qualquer criatura ou objeto que esteja sob efeito de magia.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 2º nível ou superior, você pode detectar magias em um raio de 60 metros.' },
+        'Curar Ferimentos': { circle: '1º Círculo', school: 'Conjuração', castTime: '1 ação', range: 'Toque', components: 'V, S', duration: 'Instantânea', description: 'Você toca uma criatura ferida e restaura pontos de vida. O número de pontos de vida restaurados é igual a 1d8 + seu modificador de Sabedoria.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 2º nível ou superior, os dados de cura aumentam em 1d8 para cada nível acima do 1º.' },
+        'Proteção contra o Mal e o Bem': { circle: '1º Círculo', school: 'Abjuração', castTime: '1 ação', range: 'Toque', components: 'V, S, M (uma pequena esfera de metal)', duration: 'Concentração, até 10 minutos', description: 'Você toca uma criatura. Até a magia terminar, a criatura tem vantagem em testes de resistência contra encantamentos e venenos, e ela não pode ser compelida a ser hostil a você.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 2º nível ou superior, você pode proteger até três criaturas.' },
+        'Escudo Arcano': { circle: '1º Círculo', school: 'Abjuração', castTime: '1 reação', range: 'Pessoal', components: 'V, S', duration: '1 rodada', description: 'Uma barreira invisível de energia mágica protege você. Até o início do seu próximo turno, você tem +5 de bônus na CA, incluindo contra o ataque que desencadeou esta magia, e não pode ser atingido por Disparo Mágico.', higherLevels: 'Esta magia não aumenta em nível mais alto.' },
+        'Força Mágica': { circle: '2º Círculo', school: 'Transmutação', castTime: '1 ação', range: 'Pessoal', components: 'V, S, M (uma tira de couro)', duration: 'Concentração, até 1 hora', description: 'Você recebe +2 de bônus no modificador de Força, o que afeta os testes de Força, ataques corpo a corpo com força e dano dos ataques corpo a corpo com força.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 3º nível ou superior, o bônus aumenta em +1 para cada nível acima do 2º.' },
+        'Escudo da Fé': { circle: '1º Círculo', school: 'Abjuração', castTime: '1 ação bônus', range: '12 metros', components: 'V, S, M (uma pequena pena ou pedaço de baeta)', duration: 'Concentração, até 10 minutos', description: 'A CA do alvo aumenta em +2 pela duração.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 2º nível ou superior, você pode afetar 1 criatura adicional para cada nível acima do 1º.' },
+        'Disparo de Relâmpago': { circle: '3º Círculo', school: 'Evocação', castTime: '1 ação', range: '12 metros', components: 'V, S, M (uma pena de ave e um pedaço de âmbar)', duration: 'Instantânea', description: 'Um fino raio de luz azul dispara de seu dedo apontado para uma criatura dentro do alcance, e uma esfera de energia relampejante atinge imediatamente outra criatura de sua escolha dentro de 9 metros da primeira. Ambas as criaturas devem fazer um teste de resistência de Destreza.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 4º nível ou superior, o dano aumenta em 1d6 para cada alvo para cada nível acima do 3º.' },
+        'Voo': { circle: '3º Círculo', school: 'Transmutação', castTime: '1 ação', range: 'Toque', components: 'V, S, M (uma pena de pombo)', duration: 'Concentração, até 10 minutos', description: 'Você toca uma criatura voluntária. A criatura ganha uma velocidade de vôo de 18 metros pela duração.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 4º nível ou superior, você pode afetar 1 criatura adicional para cada nível acima do 3º.' },
+        'Invocar Elementais Menores': { circle: '4º Círculo', school: 'Conjuração', castTime: '1 minuto', range: '12 metros', components: 'V, S, M (um diamante de 100po)', duration: 'Concentração, até 1 hora', description: 'Você conjura um elemental de ar, terra, fogo ou água. Escolha uma criatura elemental cujo CR seja 5 ou menor.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 5º nível ou superior, o CR máximo do elemental aumenta em 1 para cada nível acima do 4º.' },
+        'Banimento': { circle: '4º Círculo', school: 'Abjuração', castTime: '1 ação', range: '12 metros', components: 'V, S, M (uma gota de água benta ou uma gota de prata líquida)', duration: 'Concentração, até 1 minuto', description: 'Você tenta enviar uma criatura que você possa ver dentro do alcance para outro plano de existência. A criatura deve fazer um teste de resistência de Carisma.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 5º nível ou superior, você pode afetar 1 criatura adicional para cada nível acima do 4º.' },
+        'Teletransporte': { circle: '5º Círculo', school: 'Conjuração', castTime: '1 ação', range: '12 metros', components: 'V', duration: 'Instantânea', description: 'Você se teletransporta instantaneamente até 90 metros para um local que você possa ver, que esteja dentro do alcance e que esteja no mesmo plano de existência que você.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 6º nível ou superior, o alcance aumenta em 90 metros para cada nível acima do 5º.' },
+        'Murro de Pedra': { circle: '5º Círculo', school: 'Evocação', castTime: '1 ação', range: '12 metros', components: 'V, S, M (um punhado de cascalho)', duration: 'Instantânea', description: 'Você estende sua mão e cria um grande punho de pedra. Você pode usá-lo para atacar uma criatura ou objeto dentro do alcance, ou para criar um obstáculo.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 6º nível ou superior, o dano aumenta em 2d8 para cada nível acima do 5º.' },
+        'Cadeia de Relâmpagos': { circle: '6º Círculo', school: 'Evocação', castTime: '1 ação', range: '18 metros', components: 'V, S, M (uma corrente de cobre)', duration: 'Instantânea', description: 'Você cria uma corrente de relâmpagos que salta de um alvo para outro. Faça um ataque à distância com magia para um alvo dentro do alcance. Em um acerto, o alvo sofre 10d8 de dano de relâmpago.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 7º nível ou superior, o dano aumenta em 1d8 para cada nível acima do 6º.' },
+        'Invocar Fera': { circle: '6º Círculo', school: 'Conjuração', castTime: '1 minuto', range: '12 metros', components: 'V, S', duration: 'Concentração, até 1 hora', description: 'Você invoca uma criatura fera de sua escolha que aparece em um espaço desocupado que você possa ver dentro do alcance. A criatura é leal a você e seus companheiros até a magia terminar.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 7º nível ou superior, o CR máximo da fera aumenta em 1 para cada nível acima do 6º.' },
+        'Palavra de Poder: Estupefazer': { circle: '7º Círculo', school: 'Encantamento', castTime: '1 ação', range: '18 metros', components: 'V', duration: '1 rodada', description: 'Você fala uma palavra de poder que estupefaca criaturas dentro do alcance. Cada criatura de sua escolha que você possa ver dentro do alcance deve fazer um teste de resistência de Constituição.', higherLevels: 'Esta magia não aumenta em nível mais alto.' },
+        'Invocar Elemental': { circle: '7º Círculo', school: 'Conjuração', castTime: '1 minuto', range: '12 metros', components: 'V, S, M (uma oferta de 1000po em pedras preciosas)', duration: 'Concentração, até 1 hora', description: 'Você conjura um elemental poderoso. Escolha uma criatura elemental cujo CR seja 9 ou menor.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 8º nível ou superior, o CR máximo do elemental aumenta em 1 para cada nível acima do 7º.' },
+        'Domínio Divino': { circle: '8º Círculo', school: 'Encantamento', castTime: '1 ação', range: '12 metros', components: 'V', duration: 'Concentração, até 1 minuto', description: 'Você canaliza energia divina para dominar a vontade de outras criaturas. Cada criatura de sua escolha que você possa ver dentro do alcance deve fazer um teste de resistência de Sabedoria.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 9º nível, o dano aumenta em 2d8 e o número de alvos aumenta em 2.' },
+        'Invocar Ser Celestial': { circle: '8º Círculo', school: 'Conjuração', castTime: '1 minuto', range: '12 metros', components: 'V, S, M (uma oferenda de 1000po em incensos e incensórios sagrados)', duration: 'Concentração, até 1 hora', description: 'Você invoca um ser celestial poderoso. Escolha uma criatura celestial cujo CR seja 12 ou menor.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 9º nível, o CR máximo aumenta para 14.' },
+        'Desejo': { circle: '9º Círculo', school: 'Conjuração', castTime: '1 ação', range: 'Pessoal', components: 'V', duration: 'Instantânea', description: 'A magia mais poderosa de todas, Desejo permite que você altere a realidade conforme sua vontade. Você pode duplicar o efeito de qualquer magia de nível 8 ou inferior.', higherLevels: 'Esta magia é o ápice do poder arcano e não pode ser conjurada em nível superior.' },
+        'Avassalador': { circle: '9º Círculo', school: 'Evocação', castTime: '1 ação', range: '12 metros', components: 'V, S, M (um diamante de 5000po)', duration: 'Instantânea', description: 'Você cria uma onda de energia destrutiva. Cada criatura em uma esfera de 12 metros de raio centrada em um ponto que você escolher dentro do alcance deve fazer um teste de resistência de Constituição.', higherLevels: 'Esta magia não aumenta em nível mais alto.' }
+      };
+      if (spellData[spellName]) {
+        document.getElementById('spellName').textContent = spellName;
+        document.getElementById('spellCircle').textContent = spellData[spellName].circle;
+        document.getElementById('spellSchool').textContent = spellData[spellName].school;
+        document.getElementById('spellCastTime').textContent = spellData[spellName].castTime;
+        document.getElementById('spellRange').textContent = spellData[spellName].range;
+        document.getElementById('spellComponents').textContent = spellData[spellName].components;
+        document.getElementById('spellDuration').textContent = spellData[spellName].duration;
+        document.getElementById('spellDescription').textContent = spellData[spellName].description;
+        document.getElementById('spellHigherLevels').textContent = spellData[spellName].higherLevels;
+        popup.classList.add('active');
+      }
+    }
+    function hideSpellDetails() {
+      document.getElementById('spellPopup').classList.remove('active');
+    }
+    // New creature details functions
+    function showCreatureDetails(creatureName) {
+      const popup = document.getElementById('creaturePopup');
+      const creatureData = {
+        'Aranha Gigante': { 
+          ca: '14', 
+          pv: '26 (4d10 + 4)', 
+          speed: '9 m, Escalada 9 m', 
+          initiative: '+3 (13)', 
+          for: '14 (+2)', 
+          des: '16 (+3)', 
+          con: '12 (+1)', 
+          int: '2 (-4)', 
+          sab: '11 (+0)', 
+          car: '4 (-3)',
+          traits: '<strong>Andar na Teia.</strong> A aranha ignora restrições de movimento causadas por teias e sabe a localização de qualquer outra criatura em contato com a mesma teia.<br><br><strong>Escalada de Aranha.</strong> A aranha pode escalar superfícies difíceis, inclusive ao longo de tetos, sem precisar realizar um teste de atributo.',
+          actions: '<strong>Mordida.</strong> Jogada de Ataque Corpo a Corpo: +5 para acertar, alcance 1,5 m. Dano: 7 (1d8 + 3) Perfurante mais 7 (2d6) Venenoso.<br><br><strong>Teia (Recarga 5–6).</strong> Salvaguarda de Destreza: CD 13, uma criatura à vista da aranha até 18 metros. Falha: O alvo tem a condição Contido até que a teia seja destruída (CA 10; PV 5; Vulnerabilidade a dano Igneo; Imunidade a dano Psíquico e Venenoso).'
+        },
+        'Lobo': { 
+          ca: '12', 
+          pv: '11 (2d8 + 2)', 
+          speed: '12 m', 
+          initiative: '+2 (12)', 
+          for: '13 (+1)', 
+          des: '15 (+2)', 
+          con: '12 (+1)', 
+          int: '3 (-4)', 
+          sab: '12 (+1)', 
+          car: '6 (-2)',
+          traits: '<strong>Sentidos Aguçados.</strong> O lobo tem visão no escuro (18 metros) e olfato aguçado (detecta cheiros a até 1,8 km).<br><br><strong>Ataque Coordenado.</strong> O lobo tem vantagem em jogadas de ataque contra criaturas que estejam a menos de 1,5 metro de um aliado do lobo que não esteja incapacitado.',
+          actions: '<strong>Mordida.</strong> Jogada de Ataque Corpo a Corpo: +3 para acertar, alcance 1,5 m. Dano: 4 (1d4 + 1) Perfurante.'
+        },
+        'Urso Pardo': { 
+          ca: '11', 
+          pv: '42 (4d8 + 4)', 
+          speed: '9 m, Escalada 6 m', 
+          initiative: '+1 (11)', 
+          for: '19 (+4)', 
+          des: '10 (+0)', 
+          con: '14 (+2)', 
+          int: '2 (-4)', 
+          sab: '13 (+1)', 
+          car: '7 (-2)',
+          traits: '<strong>Ataque Coordenado.</strong> O urso tem vantagem em jogadas de ataque contra criaturas que estejam a menos de 1,5 metro de um aliado do urso que não esteja incapacitado.',
+          actions: '<strong>Mordida.</strong> Jogada de Ataque Corpo a Corpo: +6 para acertar, alcance 1,5 m. Dano: 9 (1d8 + 4) Perfurante.<br><br><strong>Garras.</strong> Jogada de Ataque Corpo a Corpo: +6 para acertar, alcance 1,5 m. Dano: 7 (1d6 + 4) Cortante.'
+        },
+        'Dragão Vermelho Jovem': { 
+          ca: '17', 
+          pv: '178 (17d10 + 85)', 
+          speed: '9 m, Escalada 6 m, Vôo 18 m', 
+          initiative: '+3 (13)', 
+          for: '23 (+6)', 
+          des: '10 (+0)', 
+          con: '21 (+5)', 
+          int: '14 (+2)', 
+          sab: '13 (+1)', 
+          car: '17 (+3)',
+          traits: '<strong>Imunidade a Fogo.</strong> O dragão é imune a dano de fogo.<br><br><strong>Sentidos Aguçados.</strong> Visão no escuro (18 metros), visão verdadeira (18 metros).',
+          actions: '<strong>Mordida.</strong> Jogada de Ataque Corpo a Corpo: +9 para acertar, alcance 3 m. Dano: 15 (2d8 + 6) Perfurante.<br><br><strong>Garras.</strong> Jogada de Ataque Corpo a Corpo: +9 para acertar, alcance 1,5 m. Dano: 11 (2d4 + 6) Cortante.<br><br><strong>Sopro de Fogo (Recarga 5–6).</strong> O dragão expele fogo em um cone de 9 metros. Cada criatura no cone deve fazer um teste de resistência de Destreza CD 15, sofrendo 55 (10d10) de dano de fogo em uma falha, ou metade desse dano em uma resistência bem-sucedida.'
+        },
+        'Troll': { 
+          ca: '15', 
+          pv: '84 (11d10 + 22)', 
+          speed: '9 m', 
+          initiative: '+3 (13)', 
+          for: '19 (+4)', 
+          des: '13 (+1)', 
+          con: '15 (+2)', 
+          int: '7 (-2)', 
+          sab: '9 (-1)', 
+          car: '6 (-2)',
+          traits: '<strong>Regeneração.</strong> O troll regenera 10 pontos de vida no início de cada um de seus turnos, a menos que esteja sob efeito de ácido ou fogo.<br><br><strong>Imunidade a Veneno.</strong> O troll é imune a dano de veneno e condições causadas por veneno.',
+          actions: '<strong>Ataque Múltiplo.</strong> O troll faz três ataques: um com suas garras e dois com sua mordida.<br><br><strong>Garras.</strong> Jogada de Ataque Corpo a Corpo: +6 para acertar, alcance 1,5 m. Dano: 8 (2d4 + 4) Cortante.<br><br><strong>Mordida.</strong> Jogada de Ataque Corpo a Corpo: +6 para acertar, alcance 1,5 m. Dano: 10 (2d6 + 4) Perfurante.'
+        },
+        'Elemental de Fogo': { 
+          ca: '12', 
+          pv: '59 (7d10 + 21)', 
+          speed: '12 m', 
+          initiative: '+3 (13)', 
+          for: '16 (+3)', 
+          des: '13 (+1)', 
+          con: '16 (+3)', 
+          int: '6 (-2)', 
+          sab: '10 (+0)', 
+          car: '7 (-2)',
+          traits: '<strong>Imunidade a Fogo.</strong> O elemental é imune a dano de fogo.<br><br><strong>Resistência a Dano.</strong> O elemental tem resistência a dano de concussão, perfurante e cortante de ataques não mágicos.',
+          actions: '<strong>Ataque Múltiplo.</strong> O elemental faz dois ataques: um com suas garras e um com sua mordida.<br><br><strong>Garras.</strong> Jogada de Ataque Corpo a Corpo: +5 para acertar, alcance 1,5 m. Dano: 8 (2d4 + 3) Cortante.<br><br><strong>Mordida.</strong> Jogada de Ataque Corpo a Corpo: +5 para acertar, alcance 1,5 m. Dano: 10 (2d6 + 3) Perfurante.'
+        }
+      };
+      if (creatureData[creatureName]) {
+        document.getElementById('creatureName').textContent = creatureName;
+        document.getElementById('creatureCA').textContent = creatureData[creatureName].ca;
+        document.getElementById('creaturePV').textContent = creatureData[creatureName].pv;
+        document.getElementById('creatureSpeed').textContent = creatureData[creatureName].speed;
+        document.getElementById('creatureInitiative').textContent = creatureData[creatureName].initiative;
+        document.getElementById('creatureFor').textContent = creatureData[creatureName].for;
+        document.getElementById('creatureDes').textContent = creatureData[creatureName].des;
+        document.getElementById('creatureCon').textContent = creatureData[creatureName].con;
+        document.getElementById('creatureInt').textContent = creatureData[creatureName].int;
+        document.getElementById('creatureSab').textContent = creatureData[creatureName].sab;
+        document.getElementById('creatureCar').textContent = creatureData[creatureName].car;
+        document.getElementById('creatureTraits').innerHTML = creatureData[creatureName].traits;
+        document.getElementById('creatureActions').innerHTML = creatureData[creatureName].actions;
+        popup.classList.add('active');
+      }
+    }
+    function hideCreatureDetails() {
+      document.getElementById('creaturePopup').classList.remove('active');
+    }
+  </script>
+</body>
+</html>
+
