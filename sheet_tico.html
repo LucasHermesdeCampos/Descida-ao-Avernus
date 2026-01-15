@@ -34,9 +34,7 @@
       margin: 0;
       padding: 0;
       min-height: 100%;
-      
     }
-
     body {
       font-family: 'Crimson Text', serif;
       color: var(--text-light);
@@ -52,6 +50,9 @@
       padding: 0;
       overflow-x: hidden;
       overflow-y: scroll;
+    }
+    p {
+      text-align: justify;
     }
     .container {
       max-width: 1400px;
@@ -154,7 +155,6 @@
     }
     .sheet-title::before { left: -12px; }
     .sheet-title::after { right: -12px; }
-
     /* Tab Navigation */
     .tabs {
       display: flex;
@@ -191,7 +191,6 @@
       border-color: var(--gold-primary);
       box-shadow: 0 0 8px var(--gold-glow);
     }
-
     /* Tab Content */
     .tab-content {
       display: none;
@@ -199,7 +198,6 @@
     .tab-content.active {
       display: block;
     }
-
     /* Sheet Container */
     .sheet-container {
       display: grid;
@@ -234,7 +232,6 @@
     .section-header i {
       font-size: 1.1rem;
     }
-
     /* Character Info */
     .character-info {
       display: grid;
@@ -253,6 +250,7 @@
       margin-bottom: 3px;
       font-weight: 600;
       font-family: 'Cinzel', serif;
+      text-align: justify;
     }
     .info-value {
       font-size: 0.95rem;
@@ -265,7 +263,6 @@
       color: var(--text-light);
       text-align: justify;
     }
-
     /* Character Image */
     .character-image {
       text-align: center;
@@ -301,7 +298,6 @@
       text-align: center;
       padding: 8px;
     }
-
     /* Quick Stats */
     .quick-stats {
       display: grid;
@@ -331,7 +327,6 @@
       color: var(--gold-accent);
       font-family: 'Cinzel', serif;
     }
-
     /* Attributes */
     .attributes-grid {
       display: grid;
@@ -369,7 +364,6 @@
       border-radius: 4px;
       display: inline-block;
     }
-
     /* Skills and Saving Throws */
     .skills-section {
       margin-bottom: 16px;
@@ -420,7 +414,6 @@
       min-width: 20px;
       text-align: center;
     }
-
     /* Abilities Section */
     .abilities-section {
       margin-bottom: 16px;
@@ -487,7 +480,6 @@
       max-height: 500px;
       padding: 10px 12px;
     }
-
     /* Attacks Section */
     .attacks-section {
       margin-bottom: 16px;
@@ -539,7 +531,6 @@
       max-height: 200px;
       padding: 8px 10px;
     }
-
     /* Inventory Section */
     .inventory-section {
       display: flex;
@@ -650,7 +641,6 @@
       max-height: 200px;
       padding: 8px 10px;
     }
-
     /* Coins */
     .coins-section {
       margin-top: 12px;
@@ -677,7 +667,6 @@
       font-weight: 700;
       color: var(--gold-accent);
     }
-
     /* Spells Section */
     .spells-section {
       margin-bottom: 16px;
@@ -729,7 +718,6 @@
       background: rgba(30, 15, 8, 0.7);
       border-left-color: var(--gold-accent);
     }
-
     /* Spell Details Popup */
     .spell-popup {
       position: fixed;
@@ -800,11 +788,13 @@
       margin-bottom: 2px;
       font-weight: 600;
       font-family: 'Cinzel', serif;
+      text-align: justify;
     }
     .spell-info-value {
       font-size: 0.85rem;
       font-weight: 600;
       color: var(--text-light);
+      text-align: justify;
     }
     .spell-description {
       background: rgba(20, 10, 5, 0.6);
@@ -832,7 +822,156 @@
       font-size: 0.85rem;
       line-height: 1.5;
     }
-
+    /* Transformations Section */
+    .transformations-section {
+      margin-bottom: 16px;
+    }
+    .creature-list {
+      display: grid;
+      gap: 8px;
+    }
+    .creature-item {
+      padding: 8px;
+      background: rgba(10, 5, 2, 0.5);
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-light);
+      border-left: 3px solid var(--gold-primary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .creature-item:hover {
+      background: rgba(30, 15, 8, 0.7);
+      border-left-color: var(--gold-accent);
+    }
+    .creature-name {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .creature-nd {
+      font-size: 0.9rem;
+      color: var(--gold-accent);
+      margin-left: 12px;
+      min-width: 40px;
+      text-align: center;
+    }
+    .creature-size {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-left: 12px;
+      min-width: 60px;
+      text-align: center;
+    }
+    /* Creature Details Popup */
+    .creature-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--paper-bg);
+      border: 2px solid var(--gold-primary);
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      max-width: 95vw;
+      max-height: 85vh;
+      width: 90vw;
+      overflow-y: auto;
+      display: none;
+    }
+    .creature-popup.active {
+      display: block;
+    }
+    .creature-popup-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gold-primary);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .creature-name-large {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--gold-accent);
+      font-family: 'Cinzel', serif;
+    }
+    .creature-close {
+      background: none;
+      border: none;
+      font-size: 1.3rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 4px;
+      transition: color 0.2s ease;
+    }
+    .creature-close:hover {
+      color: var(--gold-accent);
+    }
+    .creature-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .creature-stat-item {
+      background: rgba(20, 10, 5, 0.6);
+      border: 1px solid var(--paper-border);
+      border-radius: 4px;
+      padding: 6px;
+    }
+    .creature-stat-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+      font-weight: 600;
+      font-family: 'Cinzel', serif;
+      text-align: justify;
+    }
+    .creature-stat-value {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-light);
+      text-align: justify;
+    }
+    .creature-traits {
+      background: rgba(20, 10, 5, 0.6);
+      border: 1px solid var(--paper-border);
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 12px;
+    }
+    .creature-traits h4 {
+      font-size: 0.85rem;
+      color: var(--gold-accent);
+      margin-bottom: 6px;
+      font-family: 'Cinzel', serif;
+    }
+    .creature-actions {
+      background: rgba(20, 10, 5, 0.6);
+      border: 1px solid var(--paper-border);
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 12px;
+    }
+    .creature-actions h4 {
+      font-size: 0.85rem;
+      color: var(--gold-accent);
+      margin-bottom: 6px;
+      font-family: 'Cinzel', serif;
+    }
     /* Responsive */
     @media (min-width: 769px) {
       .sheet-container {
@@ -857,8 +996,10 @@
       .attack-row {
         grid-template-columns: 1.5fr 0.6fr 1.2fr 1fr 1.2fr;
       }
+      .creature-list {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
     }
-
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -888,7 +1029,6 @@
       <button class="tab-button" data-tab="inventario">Inventário</button>
       <button class="tab-button" data-tab="magias">Magias</button>
     </div>
-
     <!-- Tab Content -->
     <div class="tab-content active" id="basico">
       <div class="sheet-container">
@@ -896,14 +1036,11 @@
           <h2 class="section-header"><i class="fas fa-user"></i> Informações Básicas</h2>
           <div class="character-info">
             <div class="character-image">
-              <img src="chara-tico-sheet.png" alt="Tico Sabio" class="character-img" onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='flex';">
-              <div class="image-placeholder" style="display: none;">
-                Imagem do Personagem<br>(200x280px)
-              </div>
+              <img src="chara-tico-sheet.png" alt="Tico" class="character-img" onerror="this.style.display='none'; this.parentElement.querySelector('.image-placeholder').style.display='flex';">
             </div>
             <div class="info-field">
               <label class="info-label">Nome do Personagem</label>
-              <div class="info-value">Sábio Tico, o Grande</div>
+              <div class="info-value">Tico</div>
             </div>
             <div class="info-field">
               <label class="info-label">Espécie</label>
@@ -931,7 +1068,7 @@
             </div>
             <div class="info-field">
               <label class="info-label">Alinhamento</label>
-              <div class="info-value"></div>
+              <div class="info-value">...</div>
             </div>
           </div>
           <h2 class="section-header"><i class="fas fa-book-open"></i> História e Personalidade</h2>
@@ -1113,7 +1250,7 @@
               <div class="skill-name">Natureza</div>
               <div class="skill-modifier">+3</div>
             </div>
-            <div class="skill-checkbox checked"></div>
+            <div class="skill-checkbox checked">
               <div class="skill-checkbox"></div>
               <div class="skill-name">Percepção</div>
               <div class="skill-modifier">+2</div>
