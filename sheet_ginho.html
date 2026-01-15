@@ -1027,7 +1027,7 @@
       <button class="tab-button" data-tab="habilidades">Habilidades</button>
       <button class="tab-button" data-tab="inventario">Inventário</button>
       <button class="tab-button" data-tab="magias">Magias</button>
-      <button class="tab-button" data-tab="transformacoes">Transformações</button>
+      <button class="tab-button" data-tab="transformacoes">Formas Selvangens</button>
     </div>
     <!-- Tab Content -->
     <div class="tab-content active" id="basico">
@@ -1060,7 +1060,7 @@
             </div>
             <div class="info-field">
               <label class="info-label">Nível</label>
-              <div class="info-value">1</div>
+              <div class="info-value">2</div>
             </div>
             <div class="info-field">
               <label class="info-label">XP</label>
@@ -1068,7 +1068,7 @@
             </div>
             <div class="info-field">
               <label class="info-label">Alinhamento</label>
-              <div class="info-value">Neutro Bom</div>
+              <div class="info-value">Caótico Bom</div>
             </div>
           </div>
           <h2 class="section-header"><i class="fas fa-book-open"></i> História e Personalidade</h2>
@@ -1102,7 +1102,7 @@
             </div>
             <div class="stat-item">
               <div class="stat-label">Pontos de Vida</div>
-              <div class="stat-value">13</div>
+              <div class="stat-value">26</div>
             </div>
             <div class="stat-item">
               <div class="stat-label">Iniciativa</div>
@@ -1373,6 +1373,26 @@
                   Sua profunda ligação mística com a natureza garante a você um truque (cantrip) adicional da lista de magias de Druida, e também lhe confere um bônus igual ao seu modificador de Sabedoria (mínimo de +1) em seus testes de Inteligência de Arcanismo ou Natureza.
                 </div>
               </div>
+              <div class="ability-box" onclick="toggleAbility(this)">
+                <div class="ability-header">
+                  <div class="ability-title">Companheiro Selvagem</div>
+                  <div class="ability-source">Druída, Nível 2</div>
+                </div>
+                <div class="ability-description">
+                  Você pode conjurar Convocar Familiar usando Usar Magia, gastando um espaço de magia ou um uso de Forma Selvagem, sem componentes materiais. O familiar tem forma animal, é Feérico e desaparece após um Descanso Longo.
+                </div>
+              </div>
+              <div class="ability-box" onclick="toggleAbility(this)">
+                <div class="ability-header">
+                  <div class="ability-title">Forma Selvagem</div>
+                  <div class="ability-source">Druída, Nível 2</div>
+                </div>
+                <div class="ability-description">
+                  Forma Selvagem: como Ação Bônus, você assume uma forma animal conhecida por até metade do nível de Druida (em horas), podendo encerrar antes com Ação Bônus. Usa 2 vezes, recupera 1 em Descanso Curto e todas em Descanso Longo, ganhando usos extras por nível.
+                  <br><br>Formas Conhecidas: começa com 4 feras ND 1/4 sem voo, trocáveis após Descanso Longo. No 4º nível: 6 formas ND 1/2; no 8º nível: 8 formas ND 1, com voo permitido.
+                  <br><br>Enquanto transformado: ganha PV temporários = nível de Druida; usa o bloco da fera, mantendo mente, proficiências, classe e bônus (usa o maior valor quando aplicável); não conjura magias, mas mantém Concentração; equipamentos podem cair, fundir ou ser usados conforme a forma (sem efeito se fundidos).
+                </div>
+              </div>
             </div>
             <div class="abilities-category">
               <div class="category-title">Traços de Espécie</div>
@@ -1438,7 +1458,7 @@
           <div class="inventory-content">
             <div class="weight-info">
               <div class="weight-label">Peso Atual / Peso Máximo</div>
-              <div class="weight-value">19 kg / 56 kg</div>
+              <div class="weight-value">19,25 kg / 56 kg</div>
             </div>
             <div class="inventory-scrollable">
               <div class="inventory-list">
@@ -1533,6 +1553,17 @@
                     Usar Objeto: Identificar uma planta (CD 10) <br>
                     Fabricação: Antitoxina, Kit de Curandeiro, Poção de Cura, Vela.</p>
                   </div>
+                </div>
+                <div class="inventory-item" onclick="toggleInventoryItem(this)">
+                  <div class="item-row">
+                    <div class="item-name">Poção de Cura</div>
+                    <div class="item-quantity">1</div>
+                    <div class="item-weight">0,25 kg</div>
+                  </div>
+                  <div class="item-description">
+                    <p>
+                      Esta poção é um item mágico. Como uma Ação Bônus, você pode bebê-la ou administrá-la a outra criatura a até 1,5 metro de você. A criatura que beber o líquido vermelho mágico deste frasco restaura 2d4 + 2 Pontos de Vida.
+                    </p></div>
                 </div>
               </div>
             </div>
@@ -1680,35 +1711,25 @@
           <h2 class="section-header"><i class="fas fa-paw"></i> Transformações</h2>
           <div class="transformations-section">
             <div class="creature-list">
-              <div class="creature-item" onclick="showCreatureDetails('Aranha Gigante')">
-                <div class="creature-name">Aranha Gigante</div>
-                <div class="creature-nd">ND 1</div>
-                <div class="creature-size">Grande</div>
+              <div class="creature-item" onclick="showCreatureDetails('Aranha')">
+                <div class="creature-name">Aranha</div>
+                <div class="creature-nd">ND 0</div>
+                <div class="creature-size">Minusculo</div>
+              </div>
+              <div class="creature-item" onclick="showCreatureDetails('Javali')">
+                <div class="creature-name">Javali</div>
+                <div class="creature-nd">ND 1/4</div>
+                <div class="creature-size">Médio</div>
               </div>
               <div class="creature-item" onclick="showCreatureDetails('Lobo')">
                 <div class="creature-name">Lobo</div>
                 <div class="creature-nd">ND 1/4</div>
                 <div class="creature-size">Médio</div>
               </div>
-              <div class="creature-item" onclick="showCreatureDetails('Urso Pardo')">
-                <div class="creature-name">Urso Pardo</div>
-                <div class="creature-nd">ND 3</div>
-                <div class="creature-size">Grande</div>
-              </div>
-              <div class="creature-item" onclick="showCreatureDetails('Dragão Vermelho Jovem')">
-                <div class="creature-name">Dragão Vermelho Jovem</div>
-                <div class="creature-nd">ND 10</div>
-                <div class="creature-size">Enorme</div>
-              </div>
-              <div class="creature-item" onclick="showCreatureDetails('Troll')">
-                <div class="creature-name">Troll</div>
-                <div class="creature-nd">ND 5</div>
-                <div class="creature-size">Grande</div>
-              </div>
-              <div class="creature-item" onclick="showCreatureDetails('Elemental de Fogo')">
-                <div class="creature-name">Elemental de Fogo</div>
-                <div class="creature-nd">ND 5</div>
-                <div class="creature-size">Grande</div>
+              <div class="creature-item" onclick="showCreatureDetails('Furão-do-Banhado')">
+                <div class="creature-name">Furão-do-Banhado</div>
+                <div class="creature-nd">ND 0</div>
+                <div class="creature-size">Pequeno</div>
               </div>
             </div>
           </div>
@@ -1898,61 +1919,61 @@
     function showCreatureDetails(creatureName) {
       const popup = document.getElementById('creaturePopup');
       const creatureData = {
-        'Aranha Gigante': { 
-          ca: '14', 
-          pv: '26 (4d10 + 4)', 
-          speed: '9 m, Escalada 9 m', 
-          initiative: '+3 (13)', 
-          for: '14 (+2)', 
-          des: '16 (+3)', 
-          con: '12 (+1)', 
-          int: '2 (-4)', 
-          sab: '11 (+0)', 
-          car: '4 (-3)',
-          traits: '<strong>Andar na Teia.</strong> A aranha ignora restrições de movimento causadas por teias e sabe a localização de qualquer outra criatura em contato com a mesma teia.<br><br><strong>Escalada de Aranha.</strong> A aranha pode escalar superfícies difíceis, inclusive ao longo de tetos, sem precisar realizar um teste de atributo.',
-          actions: '<strong>Mordida.</strong> Jogada de Ataque Corpo a Corpo: +5 para acertar, alcance 1,5 m. Dano: 7 (1d8 + 3) Perfurante mais 7 (2d6) Venenoso.<br><br><strong>Teia (Recarga 5–6).</strong> Salvaguarda de Destreza: CD 13, uma criatura à vista da aranha até 18 metros. Falha: O alvo tem a condição Contido até que a teia seja destruída (CA 10; PV 5; Vulnerabilidade a dano Igneo; Imunidade a dano Psíquico e Venenoso).'
+        'Aranha': { 
+          ca: '12', 
+          pv: '1 (1d4-1)', 
+          speed: '20ft, Escalada 20ft', 
+          initiative: '+2 (12)', 
+          for: '2 (-4)', 
+          des: '14 (+2)', 
+          con: '8 (-1)', 
+          int: '1 (-5)', 
+          sab: '10 (+0)', 
+          car: '2 (-4)',
+          traits: '<strong>Perícias.</strong> Furtividade +5. <br><br> <strong>Andar na Teia.</strong> A aranha ignora restrições de movimento causadas por teias e sabe a localização de qualquer outra criatura em contato com a mesma teia.<br><br><strong>Escalada de Aranha.</strong> A aranha pode escalar superfícies difíceis, inclusive ao longo de tetos, sem precisar realizar um teste de atributo',
+          actions: '<strong>Mordida.</strong> Jogada de Ataque Corpo a Corpo: +4 para acertar, alcance 5ft. Dano: 1 Perfurante mais 2 (1d4) Venenoso.'
         },
         'Lobo': { 
           ca: '12', 
           pv: '11 (2d8 + 2)', 
-          speed: '12 m', 
+          speed: '40ft', 
           initiative: '+2 (12)', 
-          for: '13 (+1)', 
+          for: '14 (+2)', 
           des: '15 (+2)', 
           con: '12 (+1)', 
           int: '3 (-4)', 
           sab: '12 (+1)', 
           car: '6 (-2)',
-          traits: '<strong>Sentidos Aguçados.</strong> O lobo tem visão no escuro (18 metros) e olfato aguçado (detecta cheiros a até 1,8 km).<br><br><strong>Ataque Coordenado.</strong> O lobo tem vantagem em jogadas de ataque contra criaturas que estejam a menos de 1,5 metro de um aliado do lobo que não esteja incapacitado.',
-          actions: '<strong>Mordida.</strong> Jogada de Ataque Corpo a Corpo: +3 para acertar, alcance 1,5 m. Dano: 4 (1d4 + 1) Perfurante.'
+          traits: '<strong>Perícias.</strong> Furtividade +4, Percepção +5. <br><br> <strong>Táticas de Matilha.</strong> O  lobo tem Vantagem em jogadas de ataque contra uma criatura se pelo menos um dos aliados do lobo está a até 1,5 metro da criatura e o aliado não tem a condição Incapacitado.',
+          actions: '<strong>Mordida.</strong> Jogada de Ataque Corpo a Corpo: +4 para acertar, alcance 5ft. Dano: 5 (1d6 + 2) Perfurante e o alvo tem a condição Caído se for Médio ou menor.'
         },
-        'Urso Pardo': { 
+        'Javali': { 
           ca: '11', 
-          pv: '42 (4d8 + 4)', 
-          speed: '9 m, Escalada 6 m', 
-          initiative: '+1 (11)', 
-          for: '19 (+4)', 
-          des: '10 (+0)', 
+          pv: '13 (2d8 + 4)', 
+          speed: '40ft', 
+          initiative: '+0 (10)', 
+          for: '13 (+1)', 
+          des: '11 (+0)', 
           con: '14 (+2)', 
           int: '2 (-4)', 
-          sab: '13 (+1)', 
-          car: '7 (-2)',
-          traits: '<strong>Ataque Coordenado.</strong> O urso tem vantagem em jogadas de ataque contra criaturas que estejam a menos de 1,5 metro de um aliado do urso que não esteja incapacitado.',
-          actions: '<strong>Mordida.</strong> Jogada de Ataque Corpo a Corpo: +6 para acertar, alcance 1,5 m. Dano: 9 (1d8 + 4) Perfurante.<br><br><strong>Garras.</strong> Jogada de Ataque Corpo a Corpo: +6 para acertar, alcance 1,5 m. Dano: 7 (1d6 + 4) Cortante.'
+          sab: '9 (-1)', 
+          car: '5 (-3)',
+          traits: '<strong>Fúria Sangrenta.</strong> Enquanto estiver Sangrando, o javali tem Vantagem em jogadas de ataque.',
+          actions: '<strong>Investida.</strong> Jogada de Ataque Corpo a Corpo: +3 para acertar, alcance 5ft. Dano: 4 (1d6 + 1) Perfurante. Se o alvo for uma criatura Grande ou menor e o javali tiver se movido 6 metros ou mais em linha reta em direção ao alvo imediatamente antes do ataque, o alvo sofre 3 (1d6) pontos de dano Perfurante e tem com a condição Caído.'
         },
-        'Dragão Vermelho Jovem': { 
-          ca: '17', 
-          pv: '178 (17d10 + 85)', 
-          speed: '9 m, Escalada 6 m, Vôo 18 m', 
+        'Furão-do-Banhado': { 
+          ca: '13', 
+          pv: '1 (1d4-1)', 
+          speed: '30ft', 
           initiative: '+3 (13)', 
-          for: '23 (+6)', 
-          des: '10 (+0)', 
-          con: '21 (+5)', 
-          int: '14 (+2)', 
-          sab: '13 (+1)', 
-          car: '17 (+3)',
-          traits: '<strong>Imunidade a Fogo.</strong> O dragão é imune a dano de fogo.<br><br><strong>Sentidos Aguçados.</strong> Visão no escuro (18 metros), visão verdadeira (18 metros).',
-          actions: '<strong>Mordida.</strong> Jogada de Ataque Corpo a Corpo: +9 para acertar, alcance 3 m. Dano: 15 (2d8 + 6) Perfurante.<br><br><strong>Garras.</strong> Jogada de Ataque Corpo a Corpo: +9 para acertar, alcance 1,5 m. Dano: 11 (2d4 + 6) Cortante.<br><br><strong>Sopro de Fogo (Recarga 5–6).</strong> O dragão expele fogo em um cone de 9 metros. Cada criatura no cone deve fazer um teste de resistência de Destreza CD 15, sofrendo 55 (10d10) de dano de fogo em uma falha, ou metade desse dano em uma resistência bem-sucedida.'
+          for: '3 (-4)', 
+          des: '16 (+3)', 
+          con: '8 (-1)', 
+          int: '2 (-4)', 
+          sab: '12 (+1)', 
+          car: '3 (-4)',
+          traits: '<strong>Perícias.</strong> Percepção +3, Furtividade +5. <br><br> <strong>Audição e Olfato Aguçados.</strong> A doninha tem vantagem em testes de Sabedoria (Percepção) que dependam de audição ou olfato.',
+          actions: '<strong>Mordida.</strong> Jogada de Ataque Corpo a Corpo: +5 para acertar, alcance 5ft. Dano: 1 Perfurante.'
         },
         'Troll': { 
           ca: '15', 
