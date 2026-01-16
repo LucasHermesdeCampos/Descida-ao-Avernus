@@ -1192,7 +1192,7 @@
             </div>
             <div class="skill-item">
               <div class="skill-checkbox checked"></div>
-              <div class="skill-name">Arcanismo</div>
+              <div class="skill-name">Arcanismo ✩</div>
               <div class="skill-modifier">+7</div>
             </div>
             <div class="skill-item">
@@ -1217,7 +1217,7 @@
             </div>
             <div class="skill-item">
               <div class="skill-checkbox checked"></div>
-              <div class="skill-name">História</div>
+              <div class="skill-name">História ✩</div>
               <div class="skill-modifier">+7</div>
             </div>
             <div class="skill-item">
@@ -1250,8 +1250,8 @@
               <div class="skill-name">Natureza</div>
               <div class="skill-modifier">+3</div>
             </div>
-            <div class="skill-checkbox checked">
-              <div class="skill-checkbox"></div>
+            <div class="skill-item">
+              <div class="skill-checkbox checked"></div>
               <div class="skill-name">Percepção</div>
               <div class="skill-modifier">+2</div>
             </div>
@@ -1263,7 +1263,7 @@
             <div class="skill-item">
               <div class="skill-checkbox"></div>
               <div class="skill-name">Prestidigitação</div>
-              <div class="skill-modifier">+02</div>
+              <div class="skill-modifier">+2</div>
             </div>
             <div class="skill-item">
               <div class="skill-checkbox"></div>
@@ -1329,6 +1329,18 @@
                 </div>
                 <div class="attack-description">
                   <p><b>Versátil (1d8).</b> Uma arma Versátil pode ser usada com uma ou duas mãos. O valor de dano entre parênteses indica o dano causado quando a arma é empunhada com duas mãos em ataques corpo a corpo.</p>
+                </div>
+              </div>
+              <div class="attack-item" onclick="toggleAttack(this)">
+                <div class="attack-row">
+                  <div class="attack-cell"><strong>Infestação</strong></div>
+                  <div class="attack-cell">Constituição</div>
+                  <div class="attack-cell">1d6 (veneno)</div>
+                  <div class="attack-cell">30ft</div>
+                  <div class="attack-cell">Truque</div>
+                </div>
+                <div class="attack-description">
+                  <p>O alvo deve ser bem-sucedido em um teste de resistência de Constituição ou sofre 1d6 de dano de veneno e se move 1,5 metro em uma direção aleatória, caso possa se mover e tenha deslocamento mínimo de 1,5 metro. Role 1d4 para determinar a direção: 1 norte, 2 sul, 3 leste, 4 oeste. Esse movimento não provoca ataques de oportunidade e, se a direção estiver bloqueada, o alvo não se move.</p>
                 </div>
               </div>
             </div>
@@ -1417,15 +1429,6 @@
                   Você adquire os seguintes benefícios.<br><br>
                   <strong>Médico de Combate.</strong> Caso tenha um Kit de Curandeiro, você pode gastar um uso e cuidar de uma criatura até 1,5 metro de você como uma ação Usar Objeto. Essa criatura pode gastar um dos Dados de Pontos de Vida dela e você joga esse dado. A criatura recupera um número de Pontos de Vida igual à jogada mais o seu Bônus de Proficiência.<br><br>
                   <strong>Cura Garantida.</strong> Sempre que jogar um dado para determinar o número de Pontos de Vida que você recupera com uma magia ou com o benefício do talento Médico de Combate, você pode jogar novamente o dado se o resultado for 1, e você deve usar a nova jogada.
-                </div>
-              </div>
-              <div class="ability-box" onclick="toggleAbility(this)">
-                <div class="ability-header">
-                  <div class="ability-title">Vigoroso</div>
-                  <div class="ability-source">Espécie: Humano</div>
-                </div>
-                <div class="ability-description">
-                  Seus Pontos de Vida máximos aumentam em um valor igual ao dobro do seu nível de personagem quando você obtém este talento. Sempre que você alcança um nível de personagem depois disso, seus Pontos de Vida máximos aumentam em 2 Pontos de Vida adicionais.
                 </div>
               </div>
             </div>
@@ -1604,7 +1607,7 @@
     <div class="tab-content" id="magias">
       <div class="sheet-container">
         <div class="sheet-section">
-          <h2 class="section-header"><i class="fas fa-spell-check"></i> Magias</h2>
+          <h2 class="section-header"><i class="fas fa-spell-check"></i> Grimório</h2>
           <div class="spells-section">
             <div class="spell-circle-section">
               <div class="spell-circle-header">
@@ -1612,105 +1615,29 @@
                 <div class="spell-slots">Ilimitado</div>
               </div>
               <div class="spell-list">
-                <div class="spell-item" onclick="showSpellDetails('Chama')">Chama</div>
-                <div class="spell-item" onclick="showSpellDetails('Luz')">Luz</div>
-                <div class="spell-item" onclick="showSpellDetails('Ataque Furtivo')">Ataque Furtivo</div>
-                <div class="spell-item" onclick="showSpellDetails('Mãos Flamejantes')">Mãos Flamejantes</div>
+                <div class="spell-item" onclick="showSpellDetails('Druidismo')">Druidismo</div>
+                <div class="spell-item" onclick="showSpellDetails('Ilusão Menor')">Ilusão Menor</div>
+                <div class="spell-item" onclick="showSpellDetails('Infestação')">Infestação</div>
+                <div class="spell-item" onclick="showSpellDetails('Mãos Mágicas')">Mãos Mágicas</div>
               </div>
             </div>
             <div class="spell-circle-section">
               <div class="spell-circle-header">
-                <div class="spell-circle-title">1º Círculo</div>
-                <div class="spell-slots">2 / 2</div>
+                <div class="spell-circle-title">Grimório de 1º Círculo (Preparadas: 5)</div>
+                <div class="spell-slots">3 / 3</div>
               </div>
               <div class="spell-list">
-                <div class="spell-item" onclick="showSpellDetails('Detectar Magia')">Detectar Magia</div>
-                <div class="spell-item" onclick="showSpellDetails('Curar Ferimentos')">Curar Ferimentos</div>
-                <div class="spell-item" onclick="showSpellDetails('Proteção contra o Mal e o Bem')">Proteção contra o Mal e o Bem</div>
+                <div class="spell-item" onclick="showSpellDetails('Convocar Familiar')">Convocar Familiar </div>
+                <div class="spell-item" onclick="showSpellDetails('Detectar Mágia')">Detectar Mágia</div>
+                <div class="spell-item" onclick="showSpellDetails('Emaranhar')">ᚼ Emaranhar</div>
                 <div class="spell-item" onclick="showSpellDetails('Escudo Arcano')">Escudo Arcano</div>
+                <div class="spell-item" onclick="showSpellDetails('Faca de Gelo')">Faca de Gelo</div>
+                <div class="spell-item" onclick="showSpellDetails('Infusão Caústica de Tasha')">Infusão Caústica de Tasha</div>
+                <div class="spell-item" onclick="showSpellDetails('Mísseis Mágicos')">Disco Flutuante de Tenser</div>
+                <div class="spell-item" onclick="showSpellDetails('Mísseis Mágicos')">Mísseis Mágicos</div>
+                <div class="spell-item" onclick="showSpellDetails('Servo Invisível')">Servo Invisível</div>
               </div>
             </div>
-            <div class="spell-circle-section">
-              <div class="spell-circle-header">
-                <div class="spell-circle-title">2º Círculo</div>
-                <div class="spell-slots">0 / 0</div>
-              </div>
-              <div class="spell-list">
-                <div class="spell-item" onclick="showSpellDetails('Força Mágica')">Força Mágica</div>
-                <div class="spell-item" onclick="showSpellDetails('Escudo da Fé')">Escudo da Fé</div>
-              </div>
-            </div>
-            <div class="spell-circle-section">
-              <div class="spell-circle-header">
-                <div class="spell-circle-title">3º Círculo</div>
-                <div class="spell-slots">0 / 0</div>
-              </div>
-              <div class="spell-list">
-                <div class="spell-item" onclick="showSpellDetails('Disparo de Relâmpago')">Disparo de Relâmpago</div>
-                <div class="spell-item" onclick="showSpellDetails('Voo')">Voo</div>
-              </div>
-            </div>
-            <div class="spell-circle-section">
-              <div class="spell-circle-header">
-                <div class="spell-circle-title">4º Círculo</div>
-                <div class="spell-slots">0 / 0</div>
-              </div>
-              <div class="spell-list">
-                <div class="spell-item" onclick="showSpellDetails('Invocar Elementais Menores')">Invocar Elementais Menores</div>
-                <div class="spell-item" onclick="showSpellDetails('Banimento')">Banimento</div>
-              </div>
-            </div>
-            <div class="spell-circle-section">
-              <div class="spell-circle-header">
-                <div class="spell-circle-title">5º Círculo</div>
-                <div class="spell-slots">0 / 0</div>
-              </div>
-              <div class="spell-list">
-                <div class="spell-item" onclick="showSpellDetails('Teletransporte')">Teletransporte</div>
-                <div class="spell-item" onclick="showSpellDetails('Murro de Pedra')">Murro de Pedra</div>
-              </div>
-            </div>
-            <div class="spell-circle-section">
-              <div class="spell-circle-header">
-                <div class="spell-circle-title">6º Círculo</div>
-                <div class="spell-slots">0 / 0</div>
-              </div>
-              <div class="spell-list">
-                <div class="spell-item" onclick="showSpellDetails('Cadeia de Relâmpagos')">Cadeia de Relâmpagos</div>
-                <div class="spell-item" onclick="showSpellDetails('Invocar Fera')">Invocar Fera</div>
-              </div>
-            </div>
-            <div class="spell-circle-section">
-              <div class="spell-circle-header">
-                <div class="spell-circle-title">7º Círculo</div>
-                <div class="spell-slots">0 / 0</div>
-              </div>
-              <div class="spell-list">
-                <div class="spell-item" onclick="showSpellDetails('Palavra de Poder: Estupefazer')">Palavra de Poder: Estupefazer</div>
-                <div class="spell-item" onclick="showSpellDetails('Invocar Elemental')">Invocar Elemental</div>
-              </div>
-            </div>
-            <div class="spell-circle-section">
-              <div class="spell-circle-header">
-                <div class="spell-circle-title">8º Círculo</div>
-                <div class="spell-slots">0 / 0</div>
-              </div>
-              <div class="spell-list">
-                <div class="spell-item" onclick="showSpellDetails('Domínio Divino')">Domínio Divino</div>
-                <div class="spell-item" onclick="showSpellDetails('Invocar Ser Celestial')">Invocar Ser Celestial</div>
-              </div>
-            </div>
-            <div class="spell-circle-section">
-              <div class="spell-circle-header">
-                <div class="spell-circle-title">9º Círculo</div>
-                <div class="spell-slots">0 / 0</div>
-              </div>
-              <div class="spell-list">
-                <div class="spell-item" onclick="showSpellDetails('Desejo')">Desejo</div>
-                <div class="spell-item" onclick="showSpellDetails('Avassalador')">Avassalador</div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -1792,29 +1719,19 @@
     function showSpellDetails(spellName) {
       const popup = document.getElementById('spellPopup');
       const spellData = {
-        'Chama': { circle: 'Truque', school: 'Evocação', castTime: '1 ação', range: '1,5 metro', components: 'V, S', duration: 'Concentração, até 1 minuto', description: 'Você cria uma chama que pode ser usada como fonte de luz ou como arma mágica. Você pode lançar esta magia como uma ação bônus.', higherLevels: 'Esta magia não aumenta em nível mais alto.' },
-        'Luz': { circle: 'Truque', school: 'Evocação', castTime: '1 ação', range: '12 metros', components: 'V, S', duration: '1 hora', description: 'Você toca um objeto que não esteja sendo usado por outra criatura. O objeto emite luz brilhante em um raio de 15 metros e luz suave em mais 15 metros além disso.', higherLevels: 'Esta magia não aumenta em nível mais alto.' },
-        'Ataque Furtivo': { circle: 'Truque', school: 'Conjuração', castTime: '1 ação', range: 'Pessoal', components: 'V', duration: 'Instantânea', description: 'Você faz um ataque furtivo com uma arma que esteja empunhando, causando dano adicional. O dano adicional é de 1d6.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 1º nível ou superior, o dano adicional aumenta em 1d6 para cada dois níveis acima do truque.' },
-        'Mãos Flamejantes': { circle: 'Truque', school: 'Evocação', castTime: '1 ação', range: '12 metros', components: 'V, S', duration: 'Instantânea', description: 'Você conjura uma labareda que atinge todas as criaturas em um cone de 4,5 metros. Cada criatura nessa área deve fazer um teste de resistência de Destreza. Em uma falha, ela sofre 1d8 de dano de fogo, ou metade desse dano em uma resistência bem-sucedida.', higherLevels: 'O dano aumenta em 1d8 quando você atinge o 5º, 11º e 17º níveis de conjurador.' },
-        'Detectar Magia': { circle: '1º Círculo', school: 'Adivinhação', castTime: '1 ação', range: 'Pessoal', components: 'V, S', duration: 'Concentração, até 10 minutos', description: 'Para a duração da magia, você detecta magias dentro de 30 metros de você. Você pode ver uma aura fraca ao redor de qualquer criatura ou objeto que esteja sob efeito de magia.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 2º nível ou superior, você pode detectar magias em um raio de 60 metros.' },
-        'Curar Ferimentos': { circle: '1º Círculo', school: 'Conjuração', castTime: '1 ação', range: 'Toque', components: 'V, S', duration: 'Instantânea', description: 'Você toca uma criatura ferida e restaura pontos de vida. O número de pontos de vida restaurados é igual a 1d8 + seu modificador de Sabedoria.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 2º nível ou superior, os dados de cura aumentam em 1d8 para cada nível acima do 1º.' },
-        'Proteção contra o Mal e o Bem': { circle: '1º Círculo', school: 'Abjuração', castTime: '1 ação', range: 'Toque', components: 'V, S, M (uma pequena esfera de metal)', duration: 'Concentração, até 10 minutos', description: 'Você toca uma criatura. Até a magia terminar, a criatura tem vantagem em testes de resistência contra encantamentos e venenos, e ela não pode ser compelida a ser hostil a você.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 2º nível ou superior, você pode proteger até três criaturas.' },
-        'Escudo Arcano': { circle: '1º Círculo', school: 'Abjuração', castTime: '1 reação', range: 'Pessoal', components: 'V, S', duration: '1 rodada', description: 'Uma barreira invisível de energia mágica protege você. Até o início do seu próximo turno, você tem +5 de bônus na CA, incluindo contra o ataque que desencadeou esta magia, e não pode ser atingido por Disparo Mágico.', higherLevels: 'Esta magia não aumenta em nível mais alto.' },
-        'Força Mágica': { circle: '2º Círculo', school: 'Transmutação', castTime: '1 ação', range: 'Pessoal', components: 'V, S, M (uma tira de couro)', duration: 'Concentração, até 1 hora', description: 'Você recebe +2 de bônus no modificador de Força, o que afeta os testes de Força, ataques corpo a corpo com força e dano dos ataques corpo a corpo com força.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 3º nível ou superior, o bônus aumenta em +1 para cada nível acima do 2º.' },
-        'Escudo da Fé': { circle: '1º Círculo', school: 'Abjuração', castTime: '1 ação bônus', range: '12 metros', components: 'V, S, M (uma pequena pena ou pedaço de baeta)', duration: 'Concentração, até 10 minutos', description: 'A CA do alvo aumenta em +2 pela duração.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 2º nível ou superior, você pode afetar 1 criatura adicional para cada nível acima do 1º.' },
-        'Disparo de Relâmpago': { circle: '3º Círculo', school: 'Evocação', castTime: '1 ação', range: '12 metros', components: 'V, S, M (uma pena de ave e um pedaço de âmbar)', duration: 'Instantânea', description: 'Um fino raio de luz azul dispara de seu dedo apontado para uma criatura dentro do alcance, e uma esfera de energia relampejante atinge imediatamente outra criatura de sua escolha dentro de 9 metros da primeira. Ambas as criaturas devem fazer um teste de resistência de Destreza.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 4º nível ou superior, o dano aumenta em 1d6 para cada alvo para cada nível acima do 3º.' },
-        'Voo': { circle: '3º Círculo', school: 'Transmutação', castTime: '1 ação', range: 'Toque', components: 'V, S, M (uma pena de pombo)', duration: 'Concentração, até 10 minutos', description: 'Você toca uma criatura voluntária. A criatura ganha uma velocidade de vôo de 18 metros pela duração.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 4º nível ou superior, você pode afetar 1 criatura adicional para cada nível acima do 3º.' },
-        'Invocar Elementais Menores': { circle: '4º Círculo', school: 'Conjuração', castTime: '1 minuto', range: '12 metros', components: 'V, S, M (um diamante de 100po)', duration: 'Concentração, até 1 hora', description: 'Você conjura um elemental de ar, terra, fogo ou água. Escolha uma criatura elemental cujo CR seja 5 ou menor.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 5º nível ou superior, o CR máximo do elemental aumenta em 1 para cada nível acima do 4º.' },
-        'Banimento': { circle: '4º Círculo', school: 'Abjuração', castTime: '1 ação', range: '12 metros', components: 'V, S, M (uma gota de água benta ou uma gota de prata líquida)', duration: 'Concentração, até 1 minuto', description: 'Você tenta enviar uma criatura que você possa ver dentro do alcance para outro plano de existência. A criatura deve fazer um teste de resistência de Carisma.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 5º nível ou superior, você pode afetar 1 criatura adicional para cada nível acima do 4º.' },
-        'Teletransporte': { circle: '5º Círculo', school: 'Conjuração', castTime: '1 ação', range: '12 metros', components: 'V', duration: 'Instantânea', description: 'Você se teletransporta instantaneamente até 90 metros para um local que você possa ver, que esteja dentro do alcance e que esteja no mesmo plano de existência que você.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 6º nível ou superior, o alcance aumenta em 90 metros para cada nível acima do 5º.' },
-        'Murro de Pedra': { circle: '5º Círculo', school: 'Evocação', castTime: '1 ação', range: '12 metros', components: 'V, S, M (um punhado de cascalho)', duration: 'Instantânea', description: 'Você estende sua mão e cria um grande punho de pedra. Você pode usá-lo para atacar uma criatura ou objeto dentro do alcance, ou para criar um obstáculo.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 6º nível ou superior, o dano aumenta em 2d8 para cada nível acima do 5º.' },
-        'Cadeia de Relâmpagos': { circle: '6º Círculo', school: 'Evocação', castTime: '1 ação', range: '18 metros', components: 'V, S, M (uma corrente de cobre)', duration: 'Instantânea', description: 'Você cria uma corrente de relâmpagos que salta de um alvo para outro. Faça um ataque à distância com magia para um alvo dentro do alcance. Em um acerto, o alvo sofre 10d8 de dano de relâmpago.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 7º nível ou superior, o dano aumenta em 1d8 para cada nível acima do 6º.' },
-        'Invocar Fera': { circle: '6º Círculo', school: 'Conjuração', castTime: '1 minuto', range: '12 metros', components: 'V, S', duration: 'Concentração, até 1 hora', description: 'Você invoca uma criatura fera de sua escolha que aparece em um espaço desocupado que você possa ver dentro do alcance. A criatura é leal a você e seus companheiros até a magia terminar.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 7º nível ou superior, o CR máximo da fera aumenta em 1 para cada nível acima do 6º.' },
-        'Palavra de Poder: Estupefazer': { circle: '7º Círculo', school: 'Encantamento', castTime: '1 ação', range: '18 metros', components: 'V', duration: '1 rodada', description: 'Você fala uma palavra de poder que estupefaca criaturas dentro do alcance. Cada criatura de sua escolha que você possa ver dentro do alcance deve fazer um teste de resistência de Constituição.', higherLevels: 'Esta magia não aumenta em nível mais alto.' },
-        'Invocar Elemental': { circle: '7º Círculo', school: 'Conjuração', castTime: '1 minuto', range: '12 metros', components: 'V, S, M (uma oferta de 1000po em pedras preciosas)', duration: 'Concentração, até 1 hora', description: 'Você conjura um elemental poderoso. Escolha uma criatura elemental cujo CR seja 9 ou menor.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 8º nível ou superior, o CR máximo do elemental aumenta em 1 para cada nível acima do 7º.' },
-        'Domínio Divino': { circle: '8º Círculo', school: 'Encantamento', castTime: '1 ação', range: '12 metros', components: 'V', duration: 'Concentração, até 1 minuto', description: 'Você canaliza energia divina para dominar a vontade de outras criaturas. Cada criatura de sua escolha que você possa ver dentro do alcance deve fazer um teste de resistência de Sabedoria.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 9º nível, o dano aumenta em 2d8 e o número de alvos aumenta em 2.' },
-        'Invocar Ser Celestial': { circle: '8º Círculo', school: 'Conjuração', castTime: '1 minuto', range: '12 metros', components: 'V, S, M (uma oferenda de 1000po em incensos e incensórios sagrados)', duration: 'Concentração, até 1 hora', description: 'Você invoca um ser celestial poderoso. Escolha uma criatura celestial cujo CR seja 12 ou menor.', higherLevels: 'Quando você conjurar esta magia usando um espaço de magia de 9º nível, o CR máximo aumenta para 14.' },
-        'Desejo': { circle: '9º Círculo', school: 'Conjuração', castTime: '1 ação', range: 'Pessoal', components: 'V', duration: 'Instantânea', description: 'A magia mais poderosa de todas, Desejo permite que você altere a realidade conforme sua vontade. Você pode duplicar o efeito de qualquer magia de nível 8 ou inferior.', higherLevels: 'Esta magia é o ápice do poder arcano e não pode ser conjurada em nível superior.' },
+        'Infestação': {  circle: 'Truque',  school: 'Conjuração',  castTime: '1 ação',  range: '9 metros',  components: 'V, S, M (uma pulga viva)',  duration: 'Instantânea',  description: 'Você faz surgir momentaneamente uma nuvem de ácaros, pulgas e outros parasitas sobre uma criatura que possa ver dentro do alcance. O alvo deve ser bem-sucedido em um teste de resistência de Constituição ou sofre 1d6 de dano de veneno e se move 1,5 metro em uma direção aleatória, caso possa se mover e tenha deslocamento mínimo de 1,5 metro. Role 1d4 para determinar a direção: 1 norte, 2 sul, 3 leste, 4 oeste. Esse movimento não provoca ataques de oportunidade e, se a direção estiver bloqueada, o alvo não se move.',  higherLevels: 'O dano da magia aumenta em 1d6 quando você alcança o 5º nível (2d6), 11º nível (3d6) e 17º nível (4d6).'},
+        'Druidismo': { circle: 'Truque',  school: 'Transmutação',  castTime: '1 ação',  range: '9 metros',  components: 'V, S',  duration: 'Instantânea',  description: 'Sussurrando para os espíritos da natureza, você cria um dos seguintes efeitos dentro do alcance: (1) Brincar com Fogo: você acende ou apaga uma vela, tocha ou pequena fogueira; (2) Efeito Sensorial: você cria um efeito sensorial inofensivo — como folhas caindo, uma brisa suave, sons de animais ou odores fracos — que caiba em um cubo de 1,5 metro; (3) Florescimento: você faz uma flor desabrochar, uma vagem se abrir ou um broto de folha se abrir; (4) Sensor Climático: você cria um pequeno efeito sensorial que prevê o clima local nas próximas 24 horas (ex.: esfera dourada para céu limpo, nuvem para chuva, flocos para neve). Este último efeito persiste por 1 rodada.',  higherLevels: 'Esta magia não aumenta em nível mais alto.' },
+        'Mãos Mágicas': {  circle: 'Truque',  school: 'Invocação',  castTime: '1 ação',  range: '9 metros',  components: 'V, S',  duration: '1 minuto',  description: 'Uma mão espectral flutuante aparece em um ponto à sua escolha dentro do alcance e permanece pela duração da magia. A mão desaparece se ficar a mais de 9 metros de você ou se você conjurar esta magia novamente. Ao conjurar a magia, você pode usar a mão para manipular um objeto, abrir uma porta ou recipiente destrancado, guardar ou retirar itens de recipientes abertos, ou despejar o conteúdo de um frasco. Em turnos posteriores, como uma ação de Usar Magia, você pode controlar a mão novamente e, como parte dessa ação, movê-la em até 9 metros. A mão não pode atacar, ativar itens mágicos nem carregar mais de 5 quilos.',  higherLevels: ''},
+        'Ilusão Menor': {  circle: 'Truque',  school: 'Ilusão',  castTime: '1 ação',  range: '9 metros',  components: 'S, M (um pouco de lã)',  duration: '1 minuto',  description: 'Você cria um som ou a imagem de um objeto dentro do alcance da magia, que permanece pela duração. A ilusão se encerra se você conjurar esta magia novamente. Uma criatura pode usar a ação Analisar para examinar o som ou a imagem e, com um teste bem-sucedido de Inteligência (Investigação) contra a CD de suas magias, perceber que se trata de uma ilusão; para essa criatura, a ilusão torna-se tênue. Se você criar um som, o volume pode variar de um sussurro a um grito e pode ser sua voz, a voz de outra pessoa, o rugido de um leão, batidas de tambores ou qualquer outro som escolhido, podendo ser contínuo ou ocorrer em momentos distintos durante a duração. Se você criar a imagem de um objeto, como uma cadeira, pegadas enlameadas ou um pequeno baú, ela não pode exceder um cubo de 1,5 metro de lado, não produz som, luz, cheiro ou outros efeitos sensoriais, e a interação física revela sua natureza ilusória, pois objetos a atravessam.',  higherLevels: ''},
+        'Faca de Gelo': {  circle: '1º círculo',  school: 'Conjuração',  castTime: '1 ação',  range: '18 metros',  components: 'S, M (uma gota de água ou um fragmento de gelo)',  duration: 'Instantânea',  description: 'Você cria um estilhaço de gelo e o arremessa contra uma criatura dentro do alcance. Realize um ataque mágico à distância contra o alvo. Em caso de acerto, o alvo sofre 1d10 de dano perfurante. Acertando ou errando, o estilhaço explode em seguida. O alvo e todas as criaturas a até 1,5 metro do ponto da explosão devem ser bem-sucedidas em um teste de resistência de Destreza ou sofrer 2d6 de dano de frio.',  higherLevels: 'Ao conjurar esta magia usando um espaço de magia de 2º círculo ou superior, o dano de frio aumenta em 1d6 para cada nível do espaço acima do 1º.'},
+        'Mísseis Mágicos': {  circle: '1º círculo',  school: 'Evocação',  castTime: '1 ação',  range: '36 metros',  components: 'V, S',  duration: 'Instantânea',  description: 'Você cria três dardos brilhantes de pura energia mágica. Cada dardo atinge automaticamente uma criatura à sua escolha que esteja à vista e dentro do alcance da magia. Cada dardo causa 1d4 + 1 pontos de dano energético. Os dardos atingem ao mesmo tempo, e você pode direcioná-los contra uma única criatura ou distribuí-los entre várias.',  higherLevels: 'Ao conjurar esta magia usando um espaço de magia de círculo superior, você cria um dardo adicional para cada círculo do espaço acima do 1º.'},
+        'Detectar Magia': {  circle: '1º círculo',  school: 'Adivinhação',  castTime: '1 ação ou ritual',  range: 'Pessoal',  components: 'V, S',  duration: 'Concentração, até 10 minutos',  description: 'Durante a duração da magia, você sente a presença de efeitos mágicos a até 9 metros de você. Se detectar magia dessa forma, você pode usar a ação de Magia para ver uma aura tênue ao redor de qualquer criatura ou objeto visível na área que possua magia. Se o efeito mágico tiver sido criado por uma magia, você também descobre a escola dessa magia. A magia é bloqueada por 30 cm de pedra, terra ou madeira; 2,5 cm de metal; ou uma fina lâmina de chumbo.',  higherLevels: ''},
+        'Emaranhar': {  circle: '1º círculo',  school: 'Conjuração',  castTime: '1 ação',  range: '27 metros',  components: 'V, S',  duration: 'Concentração, até 1 minuto',  description: 'Plantas agarradoras brotam do chão em um quadrado de 6 metros dentro do alcance. Durante a duração da magia, essas plantas transformam o terreno da área em terreno difícil. As plantas desaparecem quando a magia termina. Cada criatura (exceto você) que estiver na área quando a magia for conjurada deve ser bem-sucedida em um teste de resistência de Força ou ficará na condição Impedido até o término da magia. Uma criatura impedida pode usar sua ação para realizar um teste de Força (Atletismo) contra a CD de suas magias. Se obtiver sucesso, ela se liberta das plantas e não fica mais impedida por elas.',  higherLevels: ''},
+        'Convocar Familiar': {  circle: '1º círculo',  school: 'Invocação',  castTime: '1 hora ou ritual',  range: '3 metros',  components: 'V, S, M (incenso queimando no valor de 10 PO ou mais, que a magia consome)',  duration: 'Instantânea',  description: 'Você obtém o serviço de um familiar, um espírito que assume a forma animal que você escolher: aranha, coruja, corvo, doninha, falcão, gato, lagarto, morcego, polvo, rato, sapo ou outra fera de ND 0. O familiar aparece em um espaço desocupado dentro do alcance e possui as estatísticas da forma escolhida, mas é um celestial, feérico ou ínfero (à sua escolha), em vez de uma fera. O familiar age de forma independente, mas obedece aos seus comandos. Enquanto estiver a até 30 metros de você, é possível se comunicar telepaticamente com ele. Como uma ação bônus, você pode ver através dos olhos do familiar e ouvir o que ele ouve até o início do seu próximo turno, obtendo os benefícios de quaisquer sentidos especiais que ele possua. Quando você conjura uma magia com alcance de toque, o familiar pode entregar a magia, desde que esteja a até 30 metros de você, usando a reação dele. O familiar rola sua própria iniciativa e age em seu próprio turno. Ele não pode atacar, mas pode realizar outras ações normalmente. Quando reduzido a 0 pontos de vida, o familiar desaparece e deixa para trás tudo o que estiver vestindo ou carregando. Como uma ação de Usar Magia, você pode dispensar temporariamente o familiar para uma mini dimensão ou descartá-lo permanentemente. Enquanto estiver temporariamente dispensado, você pode fazê-lo reaparecer com uma ação de Usar Magia em um espaço desocupado a até 9 metros de você. Você não pode ter mais de um familiar ao mesmo tempo; se conjurar esta magia enquanto já possui um, o familiar atual assume uma nova forma elegível.',  higherLevels: ''},
+        'Escudo Arcano': {  circle: '1º círculo',  school: 'Abjuração',  castTime: '1 reação (quando você é atingido por uma jogada de ataque ou se torna alvo da magia Mísseis Mágicos)',  range: 'Pessoal',  components: 'V, S',  duration: '1 rodada',  description: 'Uma barreira invisível de energia mágica surge para protegê-lo. Até o início do seu próximo turno, você recebe um bônus de +5 na Classe de Armadura, incluindo contra o ataque que acionou a magia, e não sofre dano da magia Mísseis Mágicos.',  higherLevels: ''},
+        'Infusão Cáustica de Tasha': {  circle: '1º círculo',  school: 'Evocação',  castTime: '1 ação',  range: 'Pessoal (linha de 9 metros)',  components: 'V, S, M (um pedaço de comida estragada)',  duration: 'Concentração, até 1 minuto',  description: 'Um jato de ácido emana de você em uma linha de 9 metros de comprimento e 1,5 metro de largura, na direção que escolher. Cada criatura na linha deve ser bem-sucedida em um teste de resistência de Destreza ou ficará coberta de ácido pela duração da magia, ou até que uma criatura use sua ação para raspar ou lavar o ácido de si mesma ou de outra criatura. Uma criatura coberta pelo ácido sofre 2d4 de dano ácido no início de cada um de seus turnos.',  higherLevels: 'Ao conjurar esta magia usando um espaço de magia de 2º círculo ou superior, o dano aumenta em 2d4 para cada nível do espaço acima do 1º.'},
+        'Servo Invisível': {  circle: '1º círculo',  school: 'Invocação',  castTime: '1 ação ou ritual',  range: '18 metros',  components: 'V, S, M (um pedaço de barbante e de madeira)',  duration: '1 hora',  description: 'Esta magia cria uma força invisível, sem mente, disforme e Média que executa tarefas simples sob seu comando até a magia terminar. O servo surge em um espaço desocupado no chão dentro do alcance. Ele possui CA 10, 1 ponto de vida e Força 2, não podendo atacar. Se for reduzido a 0 pontos de vida, a magia se encerra. Uma vez por turno, como uma ação bônus, você pode comandar mentalmente o servo a se mover até 4,5 metros e interagir com um objeto. O servo pode realizar tarefas simples que um humano conseguiria executar, como buscar objetos, limpar, consertar, dobrar roupas, acender fogueiras e servir comida ou bebida. Após receber um comando, ele executa a tarefa da melhor forma possível até concluí-la e então aguarda novas ordens. Se você ordenar ao servo que realize uma tarefa que o leve a mais de 18 metros de distância de você, a magia se encerra.',  higherLevels: ''},
+        'Disco Flutuante de Tenser': {  circle: '1º círculo',  school: 'Invocação',  castTime: '1 ação ou ritual',  range: '9 metros',  components: 'V, S, M (uma gota de mercúrio)',  duration: '1 hora',  description: 'Esta magia cria um disco circular horizontal de energia, com 1 metro de diâmetro e 2,5 centímetros de espessura, que flutua a 1 metro do chão em um espaço desocupado à sua escolha, à vista e dentro do alcance. O disco permanece pela duração da magia e pode carregar até 225 quilos; se esse limite for excedido, a magia se encerra e tudo no disco cai no chão. O disco permanece imóvel enquanto você estiver a até 6 metros dele. Caso você se afaste mais de 6 metros, o disco o segue, mantendo-se a até 6 metros de distância. Ele pode atravessar terrenos irregulares, subir ou descer escadas e declives, mas não pode transpor mudanças de elevação de 3 metros ou mais. Se você se afastar mais de 30 metros do disco — normalmente por ele não conseguir contornar um obstáculo — a magia se encerra.',  higherLevels: ''},
         'Avassalador': { circle: '9º Círculo', school: 'Evocação', castTime: '1 ação', range: '12 metros', components: 'V, S, M (um diamante de 5000po)', duration: 'Instantânea', description: 'Você cria uma onda de energia destrutiva. Cada criatura em uma esfera de 12 metros de raio centrada em um ponto que você escolher dentro do alcance deve fazer um teste de resistência de Constituição.', higherLevels: 'Esta magia não aumenta em nível mais alto.' }
       };
       if (spellData[spellName]) {
