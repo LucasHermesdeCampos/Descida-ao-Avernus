@@ -934,6 +934,7 @@
               <div class="info-value">???</div>
             </div>
           </div>
+
           <h2 class="section-header"><i class="fas fa-book-open"></i> História e Personalidade</h2>
           <div class="info-field">
             <label class="info-label">História Pessoal</label>
@@ -1075,7 +1076,7 @@
             </div>
             <div class="skill-item">
               <div class="skill-checkbox checked"></div>
-              <div class="skill-name">Furtividade</div>
+              <div class="skill-name">Furtividade ✩</div>
               <div class="skill-modifier">+7</div>
             </div>
             <div class="skill-item">
@@ -1135,8 +1136,8 @@
             </div>
             <div class="skill-item">
               <div class="skill-checkbox checked"></div>
-              <div class="skill-name">Sobrevivência</div>
-              <div class="skill-modifier">+4</div>
+              <div class="skill-name">Sobrevivência ✩</div>
+              <div class="skill-modifier">+6</div>
             </div>
           </div>
         </div>
@@ -1268,7 +1269,7 @@
                   <div class="ability-source">Patrulheiro, Nível 2</div>
                 </div>
                 <div class="ability-description">
-                
+                  <b>Especialista.</b> Escolha uma perícia na qual você tenha proficiência, mas não seja Especialista. Você obtém Especialização nessa perícia.
                 </div>
               </div>
             </div>
@@ -1490,6 +1491,7 @@
               <div class="spell-list">
                 <div class="spell-item" onclick="showSpellDetails('Golpe Constritor')">Golpe Constritor</div>
                 <div class="spell-item" onclick="showSpellDetails('Saraivada de Espinhos')">Saraivada de Espinhos</div>
+                <div class="spell-item" onclick="showSpellDetails('Golpe Zéfiro')">Golpe Zéfiro</div>
                 <div class="spell-item" onclick="showSpellDetails('Marca do Predador')">Marca do Predador [2x]</div>
               </div>
             </div>
@@ -1580,6 +1582,7 @@
         'Golpe Constritor': {  circle: '1º Círculo',  school: 'Invocação',  castTime: '1 ação bônus (realizada imediatamente após atingir uma criatura com uma arma)',  range: 'Pessoal',  components: 'V',  duration: 'Concentração, até 1 minuto',  description: 'Ao acertar uma criatura com um ataque de arma, vinhas agarradoras surgem envolvendo o alvo, que deve realizar uma salvaguarda de Força. Criaturas de tamanho Grande ou maior têm vantagem nessa salvaguarda. Em caso de falha, o alvo fica sob a condição Contido até o término da magia. Em caso de sucesso, as videiras murcham e a magia se encerra. Enquanto estiver Contido dessa forma, o alvo sofre 1d6 de dano perfurante no início de cada um de seus turnos. O alvo, ou outra criatura ao alcance dele, pode usar uma ação para realizar um teste de Força (Atletismo) contra a CD da sua magia; em caso de sucesso, as videiras desaparecem.',  higherLevels: 'Ao usar um espaço de magia de círculo superior, o dano aumenta em 1d6 para cada círculo de magia acima do 1º.'},
         'Saraivada de Espinhos': {  circle: '1º Círculo',  school: 'Invocação',  castTime: '1 ação bônus (realizada imediatamente após atingir uma criatura com um ataque de arma à distância)',  range: 'Pessoal',  components: 'V',  duration: 'Instantânea',  description: 'Ao atingir uma criatura com um ataque de arma à distância, esta magia faz surgir uma chuva de espinhos a partir da arma ou da munição utilizada. O alvo e cada criatura em um raio de 1,5 metro devem realizar uma salvaguarda de Destreza, sofrendo 1d10 de dano perfurante em caso de falha, ou metade desse dano em caso de sucesso.',  higherLevels: 'Ao usar um espaço de magia de círculo superior, o dano aumenta em 1d10 para cada círculo de magia acima do 1º.'},
         'Marca do Predador': {  circle: '1º Círculo',  school: 'Adivinhação',  castTime: '1 ação bônus',  range: '27 metros',  components: 'V',  duration: 'Concentração, até 1 hora',  description: 'Você marca magicamente uma criatura que possa ver dentro do alcance como sua presa. Até o fim da magia, sempre que você acertar o alvo com uma jogada de ataque, ele sofre 1d6 de dano energético adicional. Além disso, você tem vantagem em testes de Sabedoria (Percepção ou Sobrevivência) feitos para localizá-lo. Se o alvo for reduzido a 0 pontos de vida antes do término da magia, você pode usar uma ação bônus para transferir a marca para outra criatura que possa ver dentro do alcance.',  higherLevels: 'Ao usar um espaço de magia de círculo superior, a duração da concentração aumenta: com espaços de 3º–4º círculo, até 8 horas; com espaços de 5º círculo ou superior, até 24 horas.'},
+        'Golpe Zéfiro': {  circle: '1º círculo',  school: 'Transmutação',  castTime: '1 ação bônus',  range: 'Pessoal',  components: 'V',  duration: 'Concentração, até 1 minuto',  description: 'Você se move como o vento. Durante a duração da magia, seu deslocamento não provoca ataques de oportunidade. Uma vez antes do término da magia, em um turno seu, você pode receber vantagem em uma jogada de ataque com arma. Se o ataque acertar, ele causa 1d8 de dano de força adicional. Independentemente de acertar ou errar, seu deslocamento de caminhada aumenta em 9 metros até o final desse turno.',  higherLevels: ''},
         'Avassalador': { circle: '9º Círculo', school: 'Evocação', castTime: '1 ação', range: '12 metros', components: 'V, S, M (um diamante de 5000po)', duration: 'Instantânea', description: 'Você cria uma onda de energia destrutiva. Cada criatura em uma esfera de 12 metros de raio centrada em um ponto que você escolher dentro do alcance deve fazer um teste de resistência de Constituição.', higherLevels: 'Esta magia não aumenta em nível mais alto.' }
       };
       if (spellData[spellName]) {
