@@ -915,7 +915,7 @@
             </div>
             <div class="info-field">
               <label class="info-label">Subclasse</label>
-              <div class="info-value">N/A</div>
+              <div class="info-value">Patrono do Rei-Feiticeiro</div>
             </div>
             <div class="info-field">
               <label class="info-label">Antecedente</label>
@@ -923,15 +923,15 @@
             </div>
             <div class="info-field">
               <label class="info-label">Nível</label>
-              <div class="info-value">1</div>
+              <div class="info-value">3</div>
             </div>
             <div class="info-field">
               <label class="info-label">XP</label>
-              <div class="info-value">0</div>
+              <div class="info-value">900</div>
             </div>
             <div class="info-field">
               <label class="info-label">Alinhamento</label>
-              <div class="info-value"></div>
+              <div class="info-value">???</div>
             </div>
           </div>
           <h2 class="section-header"><i class="fas fa-book-open"></i> História e Personalidade</h2>
@@ -965,7 +965,7 @@
             </div>
             <div class="stat-item">
               <div class="stat-label">Pontos de Vida</div>
-              <div class="stat-value">10</div>
+              <div class="stat-value">24</div>
             </div>
             <div class="stat-item">
               <div class="stat-label">Iniciativa</div>
@@ -1084,9 +1084,9 @@
               <div class="skill-modifier">+2</div>
             </div>
             <div class="skill-item">
-              <div class="skill-checkbox"></div>
+              <div class="skill-checkbox checked"></div>
               <div class="skill-name">Intimidação</div>
-              <div class="skill-modifier">+3</div>
+              <div class="skill-modifier">+5</div>
             </div>
             <div class="skill-item">
               <div class="skill-checkbox"></div>
@@ -1184,7 +1184,7 @@
                 <div class="attack-row">
                   <div class="attack-cell"><strong>Rajada Mística</strong></div>
                   <div class="attack-cell">+5</div>
-                  <div class="attack-cell">1d10 (força)</div>
+                  <div class="attack-cell">1d10+3 (força)</div>
                   <div class="attack-cell">120ft</div>
                   <div class="attack-cell"></div>
                 </div>
@@ -1245,6 +1245,58 @@
                 Como Ação Bônus, você pode conjurar uma arma de pacto (arma corpo a corpo simples ou marcial) ou vincular-se a uma arma mágica tocada, desde que ninguém esteja sintonizado a ela. Enquanto o vínculo durar, você tem proficiência, pode usá-la como Foco de Conjuração, usar Carisma nas jogadas de ataque e dano, e escolher causar dano Necrótico, Psíquico, Radiante ou o dano normal da arma.
                 <br>
                 <br>O vínculo termina se você usar essa Ação Bônus novamente, ficar a mais de 1,5 m da arma por 1 minuto, ou morrer; armas conjuradas desaparecem ao fim do vínculo.
+                </div>
+              </div>
+              <div class="ability-box" onclick="toggleAbility(this)">
+                <div class="ability-header">
+                  <div class="ability-title">Invocação Mística: Explosão Agonizante</div>
+                  <div class="ability-source">Bruxo, Nível 2</div>
+                </div>
+                <div class="ability-description">
+                Escolha um dos seus truques conhecidos de Bruxo (Rajada Mistica) que cause dano. Você pode adicionar seu modificador de Carisma às jogadas de dano dessa magia.
+                <br><br>Repetível. Você pode adquirir esta invocação mais de uma vez, escolhendo um truque elegível diferente a cada vez.
+                </div>
+              </div>
+              <div class="ability-box" onclick="toggleAbility(this)">
+                <div class="ability-header">
+                  <div class="ability-title">Invocação Mística: Explosão Repulsiva</div>
+                  <div class="ability-source">Bruxo, Nível 2</div>
+                </div>
+                <div class="ability-description">
+                Escolha um dos seus truques conhecidos de Bruxo que exija uma jogada de ataque. Ao atingir uma criatura Grande ou menor com esse truque, você pode empurrá-la até 3 metros para longe de você. 
+                <br><br>Repetível. Você pode adquirir esta invocação mais de uma vez, escolhendo um truque elegível diferente a cada vez.
+                </div>
+              </div>
+              <div class="ability-box" onclick="toggleAbility(this)">
+                <div class="ability-header">
+                  <div class="ability-title">Astúcia Múgica</div>
+                  <div class="ability-source">Bruxo, Nível 2</div>
+                </div>
+                <div class="ability-description">
+                Ao final de um rito esotérico que você pode realizar por 1 minuto, você recupera os espaços de magia das Magias de Pacto gastos em um número igual à metade da sua quantidade máxima (arredondado para cima).
+                <br><br>Você pode usar esta característica novamente após completar um Descanso Longo.
+                </div>
+              </div>
+              <div class="ability-box" onclick="toggleAbility(this)">
+                <div class="ability-header">
+                  <div class="ability-title">Conjuração Psionica</div>
+                  <div class="ability-source">Bruxo (Rei-Feiticeiro), Nível 3</div>
+                </div>
+                <div class="ability-description">
+                Quando você conjura uma mágia da tabela de Magias do Rei-Feiticeiro, você pode faze-la sem exigir componentes Verbais ou Materiais, exceto componentes Materiais que são consumidos pela magia ou que tenham custo em peças de ouro.
+                </div>
+              </div>
+              <div class="ability-box" onclick="toggleAbility(this)">
+                <div class="ability-header">
+                  <div class="ability-title">Arauto do Tirano [3/3]</div>
+                  <div class="ability-source">Bruxo (Rei-Feiticeiro), Nível 3</div>
+                </div>
+                <div class="ability-description">
+                Você recebe os seguintes benefícios:
+                <br><br>
+                - Presença Intimidadora. Recebe proficiência em Intimidação, ou Expertise se já for proficiente.<br>
+                - Voz do Tirano. Você pode conjurar Comando como uma Ação Bônus e sem consuir Espaço de Magia. 
+                <br><br>Você pode fazer isso um número de vezes igual ao seu Carisma e recupera todos os usos ao completar um Descanso Longo.
                 </div>
               </div>
             </div>
@@ -1432,11 +1484,19 @@
             <div class="spell-circle-section">
               <div class="spell-circle-header">
                 <div class="spell-circle-title">1º Círculo</div>
-                <div class="spell-slots">1 / 1</div>
+                <div class="spell-slots">2 espaços</div>
               </div>
               <div class="spell-list">
+                <div class="spell-item" onclick="showSpellDetails('Comando')">[Pacto] Comando</div>
+                <div class="spell-item" onclick="showSpellDetails('Destruição Colérica')">[Pacto] Destruição Colérica</div>
+                <div class="spell-item" onclick="showSpellDetails('Duelo Compelido')">[Pacto] Duelo Compelido</div>
+                <div class="spell-item" onclick="showSpellDetails('Espinho Mental')">[Pacto] Espinho Mental</div>
+                <div class="spell-item" onclick="showSpellDetails('Paralisar Pessoa')">[Pacto] Paralisar Pessoa</div>
                 <div class="spell-item" onclick="showSpellDetails('Braços de Hadar')">Braços de Hadar</div>
+                <div class="spell-item" onclick="showSpellDetails('Compreender Idiomas')">Compreender Idiomas</div>
+                <div class="spell-item" onclick="showSpellDetails('Danação')">Danação</div>
                 <div class="spell-item" onclick="showSpellDetails('Detectar Magia')">Detectar Magia</div>
+                
               </div>
             </div>
           </div>

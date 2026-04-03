@@ -1052,7 +1052,7 @@
             </div>
             <div class="info-field">
               <label class="info-label">Subclasse</label>
-              <div class="info-value">N/A</div>
+              <div class="info-value">Círculo da Preservação</div>
             </div>
             <div class="info-field">
               <label class="info-label">Antecedente</label>
@@ -1060,7 +1060,7 @@
             </div>
             <div class="info-field">
               <label class="info-label">Nível</label>
-              <div class="info-value">2</div>
+              <div class="info-value">3</div>
             </div>
             <div class="info-field">
               <label class="info-label">XP</label>
@@ -1102,7 +1102,7 @@
             </div>
             <div class="stat-item">
               <div class="stat-label">Pontos de Vida</div>
-              <div class="stat-value">26</div>
+              <div class="stat-value">39</div>
             </div>
             <div class="stat-item">
               <div class="stat-label">Iniciativa</div>
@@ -1289,7 +1289,7 @@
           </div>
           <div class="info-field">
             <label class="info-label">Ferramentas</label>
-            <div class="info-value">Kit de Herbalismo</div>
+            <div class="info-value">Kit de Herbalismo, Ocarina</div>
           </div>
           <div class="info-field">
             <label class="info-label">Idiomas</label>
@@ -1391,6 +1391,34 @@
                   Forma Selvagem: como Ação Bônus, você assume uma forma animal conhecida por até metade do nível de Druida (em horas), podendo encerrar antes com Ação Bônus. Usa 2 vezes, recupera 1 em Descanso Curto e todas em Descanso Longo, ganhando usos extras por nível.
                   <br><br>Formas Conhecidas: começa com 4 feras ND 1/4 sem voo, trocáveis após Descanso Longo. No 4º nível: 6 formas ND 1/2; no 8º nível: 8 formas ND 1, com voo permitido.
                   <br><br>Enquanto transformado: ganha PV temporários = nível de Druida; usa o bloco da fera, mantendo mente, proficiências, classe e bônus (usa o maior valor quando aplicável); não conjura magias, mas mantém Concentração; equipamentos podem cair, fundir ou ser usados conforme a forma (sem efeito se fundidos).
+                </div>
+              </div>
+              <div class="ability-box" onclick="toggleAbility(this)">
+                <div class="ability-header">
+                  <div class="ability-title">Terra Preservada</div>
+                  <div class="ability-source">Druída (Círculo da Preservação), Nível 3</div>
+                </div>
+                <div class="ability-description">
+                Como uma Ação Bônus, você pode gastar um uso de sua Forma Selvagem para preencher um Cubo de 15 ft, originado de um ponto no chão que você possa ver a até 120 ft de você, com energia revitalizante. O efeito dura por 1 minuto ou até que você adquira a condição Incapacitado, fique a mais de 120 ft do Cubo ou morra.
+                <br>Sempre que uma criatura (incluindo você) terminar o turno dentro do Cubo, você pode conceder a ela um dos seguintes benefícios:
+                <br><br>
+                <strong>Fortalecer</strong>. A criatura recebe Pontos de Vida Temporários iguais a 1d4 + seu nível de Druida.
+                <br><strong>Purificar</strong>. Você encerra um efeito que esteja causando na criatura a condição Amedrontado ou Envenenado.
+                <br>Além disso, vegetação não mágica nativa da região brota no solo dentro do Cubo. Essa vegetação desaparece quando o efeito termina.
+                <br><br>Como uma Ação Bônus nos turnos seguintes, você pode mover o Cubo até 30 ft para outra área no chão dentro de 120 ft de você
+                </div>
+              </div>
+              <div class="ability-box" onclick="toggleAbility(this)">
+                <div class="ability-header">
+                  <div class="ability-title">Estudante da Preservação</div>
+                  <div class="ability-source">Druída (Círculo da Preservação), Nível 3</div>
+                </div>
+                <div class="ability-description">
+                  Seus estudos aprimoraram sua compreensão da ordem e da resiliência da natureza, concedendo os seguintes benefícios:
+                  <br><br>
+                  <strong>Conjuração Frugal.</strong> Quando você conjura uma magia de Druida, pode conjurá-la sem componentes Materiais, exceto aqueles que são consumidos pela magia ou que possuem custo especificado na descrição da magia.
+                  <br>Além disso, sempre que você conjurar uma magia de Druida que exija um componente Material que seja consumido pela magia, há 10% de chance de que o componente não seja consumido nessa conjuração.
+                  <br><strong>Proficiência em Ferramentas.</strong> Você ganha proficiência com um tipo de Ferramentas de Artesão à sua escolha.
                 </div>
               </div>
             </div>
@@ -1611,16 +1639,28 @@
             <div class="spell-circle-section">
               <div class="spell-circle-header">
                 <div class="spell-circle-title">1º Círculo</div>
-                <div class="spell-slots">3 / 3</div>
+                <div class="spell-slots">4 espaços</div>
               </div>
               <div class="spell-list">
                 <div class="spell-item" onclick="showSpellDetails('Convocar Familiar')">[Classe] Convocar Familiar </div>
-                <div class="spell-item" onclick="showSpellDetails('Convocar Familiar')">[Classe] Falar com Animais </div>
+                <div class="spell-item" onclick="showSpellDetails('Falar com Animais')">[Classe] Falar com Animais </div>
+                <div class="spell-item" onclick="showSpellDetails('Benção')">[Círculo] Benção</div>
+                <div class="spell-item" onclick="showSpellDetails('Santuário')">[Círculo] Santuário</div>
                 <div class="spell-item" onclick="showSpellDetails('Absorver Elementos')">Absorver Elementos</div>
                 <div class="spell-item" onclick="showSpellDetails('Bom Fruto')">Bom Fruto</div>
                 <div class="spell-item" onclick="showSpellDetails('Curar Ferimentos')">Curar Ferimentos</div>
                 <div class="spell-item" onclick="showSpellDetails('Detectar Magia')">Detectar Magia</div>
                 <div class="spell-item" onclick="showSpellDetails('Emaranhar')">Emaranhar</div>
+              </div>
+            </div>
+            <div class="spell-circle-section">
+              <div class="spell-circle-header">
+                <div class="spell-circle-title">2º Círculo</div>
+                <div class="spell-slots">2 espaços</div>
+              </div>
+              <div class="spell-list">
+                <div class="spell-item" onclick="showSpellDetails('Proteção contra Veneno')">[Círculo] Proteção Contra Veneno </div>
+                <div class="spell-item" onclick="showSpellDetails('Restauração Menor')">[Círculo] Restauração Menor </div>
               </div>
             </div>
           </div>
@@ -1806,6 +1846,10 @@
         'Convocar Familiar': {  circle: '1º círculo',  school: 'Invocação',  castTime: '1 hora ou ritual',  range: '3 metros',  components: 'V, S, M (incenso queimando no valor de 10 PO ou mais, que a magia consome)',  duration: 'Instantânea',  description: 'Você obtém o serviço de um familiar, um espírito que assume a forma animal que você escolher: aranha, coruja, corvo, doninha, falcão, gato, lagarto, morcego, polvo, rato, sapo ou outra fera de ND 0. O familiar aparece em um espaço desocupado dentro do alcance e possui as estatísticas da forma escolhida, mas é um celestial, feérico ou ínfero (à sua escolha), em vez de uma fera. O familiar age de forma independente, mas obedece aos seus comandos. Enquanto estiver a até 30 metros de você, é possível se comunicar telepaticamente com ele. Como uma ação bônus, você pode ver através dos olhos do familiar e ouvir o que ele ouve até o início do seu próximo turno, obtendo os benefícios de quaisquer sentidos especiais que ele possua. Quando você conjura uma magia com alcance de toque, o familiar pode entregar a magia, desde que esteja a até 30 metros de você, usando a reação dele. O familiar rola sua própria iniciativa e age em seu próprio turno. Ele não pode atacar, mas pode realizar outras ações normalmente. Quando reduzido a 0 pontos de vida, o familiar desaparece e deixa para trás tudo o que estiver vestindo ou carregando. Como uma ação de Usar Magia, você pode dispensar temporariamente o familiar para uma mini dimensão ou descartá-lo permanentemente. Enquanto estiver temporariamente dispensado, você pode fazê-lo reaparecer com uma ação de Usar Magia em um espaço desocupado a até 9 metros de você. Você não pode ter mais de um familiar ao mesmo tempo; se conjurar esta magia enquanto já possui um, o familiar atual assume uma nova forma elegível.',  higherLevels: ''},
         'Bom Fruto': {  circle: '1º círculo',  school: 'Invocação',  castTime: '1 ação',  range: 'Pessoal',  components: 'V, S, M (um ramo de visco)',  duration: '24 horas',  description: 'Dez frutos aparecem em sua mão e permanecem magicamente infundidos pela duração da magia. Uma criatura pode usar uma ação bônus para comer um fruto. Ao fazê-lo, a criatura recupera 1 ponto de vida e recebe alimento suficiente para se sustentar por um dia inteiro. Frutos que não forem consumidos desaparecem quando a magia termina.',  higherLevels: ''},
         'Falar com Animais': {  circle: '1º círculo',  school: 'Adivinhação',  castTime: '1 ação ou ritual',  range: 'Pessoal',  components: 'V, S',  duration: '10 minutos',  description: 'Pela duração da magia, você pode compreender e se comunicar verbalmente com feras. Além disso, pode usar com elas qualquer uma das opções de perícia da ação Influenciar. A maioria das feras fornece pouca informação sobre assuntos que não estejam diretamente ligados à sobrevivência ou ao companheirismo, mas ao menos pode relatar informações sobre áreas próximas e criaturas, incluindo o que percebeu no último dia.',  higherLevels: ''},
+        'Benção': {  circle: '1º círculo',  school: 'Encantamento',  castTime: '1 ação',  range: '30 ft',  components: 'V, S, M (um Símbolo Sagrado no valor de 5 ou mais PO)',  duration: 'Concentração, até 1 minuto',  description: 'Você abençoa até três criaturas no alcance da magia. Sempre que um alvo realiza uma jogada de ataque ou uma salvaguarda antes que a magia termine, o alvo adiciona 1d4 à jogada de ataque ou salvaguarda.',  higherLevels: 'Você pode escolher uma criatura adicional para cada círculo de espaço de magia acima de 1.'},
+        'Santuário': {  circle: '1º círculo',  school: 'Abjuração',  castTime: '1 ação bonus',  range: '30 ft',  components: 'V, S, M (o caco de um espelho)',  duration: '1 minuto',  description: 'Você protege uma criatura no alcance da magia. Atéque a magia termine, qualquer criatura que tenha como alvo a criatura protegida com uma jogada de ataque ou uma magia que cause dano deve ser bem sucedida em uma salvaguarda de Sabedoria, ou deve escolher um novo alvo ou perder o ataque ou a magia. Esta magia não protege contra áreas de efeito. A magia se encerra se a criatura protegida realizar uma jogadade ataque, conjurar uma magia ou causar dano.',  higherLevels: ''},
+        'Proteção contra Veneno': {  circle: '2º círculo',  school: 'Abjuração',  castTime: '1 ação',  range: 'Toque',  components: 'V, S',  duration: '1 hora',  description: 'Você toca uma criatura e encerra nela a condição Envenenado. Pela duração da magia, o alvo tem Vantagemnas salvaguardas para evitar ou encerrar a condição Envenenado e tem Resistência a dano Venenoso.',  higherLevels: ''},
+        'Restauração Menor': {  circle: '2º círculo',  school: 'Abjuração',  castTime: '1 ação bônus',  range: 'Toque',  components: 'V, S',  duration: 'Instantânea',  description: 'Você toca uma criatura e remove uma condição: Cego, Envenenado, Paralisado ou Surdo.',  higherLevels: ''},
         'Avassalador': { circle: '9º Círculo', school: 'Evocação', castTime: '1 ação', range: '12 metros', components: 'V, S, M (um diamante de 5000po)', duration: 'Instantânea', description: 'Você cria uma onda de energia destrutiva. Cada criatura em uma esfera de 12 metros de raio centrada em um ponto que você escolher dentro do alcance deve fazer um teste de resistência de Constituição.', higherLevels: 'Esta magia não aumenta em nível mais alto.' }
       };
       if (spellData[spellName]) {

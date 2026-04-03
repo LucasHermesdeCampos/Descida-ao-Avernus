@@ -915,7 +915,7 @@
             </div>
             <div class="info-field">
               <label class="info-label">Subclasse</label>
-              <div class="info-value">N/A</div>
+              <div class="info-value">Guaridão Draco</div>
             </div>
             <div class="info-field">
               <label class="info-label">Antecedente</label>
@@ -923,7 +923,7 @@
             </div>
             <div class="info-field">
               <label class="info-label">Nível</label>
-              <div class="info-value">2</div>
+              <div class="info-value">3</div>
             </div>
             <div class="info-field">
               <label class="info-label">XP</label>
@@ -1272,6 +1272,39 @@
                   <b>Especialista.</b> Escolha uma perícia na qual você tenha proficiência, mas não seja Especialista. Você obtém Especialização nessa perícia.
                 </div>
               </div>
+              <div class="ability-box" onclick="toggleAbility(this)">
+                <div class="ability-header">
+                  <div class="ability-title">Dádiva Dracônico</div>
+                  <div class="ability-source">Patrulheiro (Guardião Draco), Nível 3</div>
+                </div>
+                <div class="ability-description">
+                  No 3º nível, o vínculo que você compartilha com seu draco cria uma conexão com a linhagem dos dragões, concedendo compreensão e fortalecendo sua presença. Você recebe os seguintes benefícios:
+                  <br><br>
+                  <b>Taumaturgia</b>. Você aprende o truque Taumaturgia, que passa a ser considerado uma magia de Patrulheiro para você.
+                  <br>
+                  <b>Língua dos Dragões.</b> Você aprende a falar, ler e escrever Dracônico ou outro idioma à sua escolha.
+                </div>
+              </div>
+              <div class="ability-box" onclick="toggleAbility(this)">
+                <div class="ability-header">
+                  <div class="ability-title">Companheiro Draco</div>
+                  <div class="ability-source">Patrulheiro (Guardião Draco), Nível 3</div>
+                </div>
+                <div class="ability-description">
+                  No 3º nível, como uma Ação, você pode invocar magicamente o draco que está vinculado a você. Ele aparece em um espaço desocupado à sua escolha a até 30 pés de você.
+                  <br>
+                  <br>O draco é amigável a você e aos seus companheiros e obedece aos seus comandos. Veja suas estatísticas no bloco de estatísticas do Companheiro Draco, que usa seu Bônus de Proficiência (PB) em vários pontos. Sempre que você invocar o draco, escolha um tipo de dano listado em seu traço Essência Dracônica.
+                  <br>Você pode determinar as características cosméticas do draco, como sua cor, textura das escamas ou qualquer efeito visível de sua Essência Dracônica; essa escolha não afeta suas estatísticas de jogo.
+                  <br>
+                  <br>Em combate, o draco compartilha sua iniciativa, mas realiza o turno imediatamente após o seu. Ele pode se mover e usar sua Reação normalmente, mas a única Ação que realiza no turno é Esquivar, a menos que você use uma Ação Bônus no seu turno para comandá-lo a realizar outra ação. Essa ação pode ser uma do bloco de estatísticas do draco ou qualquer outra ação apropriada. Se você estiver Incapacitado, o draco pode realizar qualquer ação de sua escolha, não apenas Esquivar.
+                  <br>
+                  <br>O draco permanece até ser reduzido a 0 Pontos de Vida, até você usar esta característica para invocá-lo novamente ou até você morrer. Qualquer item que o draco esteja vestindo ou carregando é deixado para trás quando ele desaparece.
+                  <br>
+                  Depois de invocar o draco, você não pode fazê-lo novamente até terminar um Descanso Longo, a menos que gaste um espaço de magia de 1º nível ou superior para invocá-lo novamente.
+                </div>
+              </div>
+
+              
             </div>
             <div class="abilities-category">
               <div class="category-title">Traços de Espécie</div>
@@ -1309,6 +1342,20 @@
                 </div>
                 <div class="ability-description">
                   Você conhece o truque Luz. Carisma é seu atributo de conjuração para isso.
+                </div>
+              </div>
+              <div class="ability-box" onclick="toggleAbility(this)">
+                <div class="ability-header">
+                  <div class="ability-title">Revelação Celestial</div>
+                  <div class="ability-source">Aasimar</div>
+                </div>
+                <div class="ability-description">
+                  No 3º nível, como Ação Bônus, você pode se transformar escolhendo uma das opções abaixo por 1 minuto (encerra sem ação). Uso: 1 vez por Descanso Longo.
+                  <br><br>Uma vez por turno durante a transformação, ao causar dano com ataque ou magia, você causa dano extra igual ao seu Bônus de Proficiência (Necrótico para Manto Necrótico; Radiante para Asas Celestiais e Radiância Interior).
+                  <br><br>
+                  <b>Asas Celestiais:</b> ganha Velocidade de Voo igual à sua Velocidade.
+                  <br><b>Radiância Interior:</b> emite luz (10 pés plena + 10 pés fraca) e causa dano Radiante (PB) a criaturas a até 10 pés ao fim do seu turno.
+                  <br><b>Manto Necrótico:</b> criaturas (exceto aliados) a até 10 pés fazem TR de Carisma (CD 8 + Carisma + PB) ou ficam Amedrontadas até o fim do seu próximo turno.
                 </div>
               </div>
             </div>
@@ -1604,5 +1651,4 @@
   </script>
 </body>
 </html>
-
 
